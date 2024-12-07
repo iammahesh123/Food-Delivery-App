@@ -105,8 +105,22 @@
     }
 
     .explore-menu-list {
-        flex-direction: column; /* Stack items vertically */
+        display: flex; /* Ensure items are in a row */
+        flex-direction: row; /* Maintain horizontal layout */
         gap: 10px; /* Tighten gap */
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent items from wrapping to the next line */
+        padding-bottom: 5px; /* Add some space to avoid scrollbar overlap */
+        scrollbar-width: thin; /* For Firefox, makes the scrollbar thinner */
+    }
+
+    .explore-menu-list::-webkit-scrollbar {
+        height: 6px; /* Adjust scrollbar height for small screens */
+    }
+
+    .explore-menu-list::-webkit-scrollbar-thumb {
+        background-color: #ccc; /* Customize scrollbar color */
+        border-radius: 3px;
     }
 
     .explore-menu-list-items img {
