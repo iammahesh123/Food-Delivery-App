@@ -15,3 +15,36 @@
     margin-top: 30px;
 }
 
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .food-display-list {
+        grid-template-columns: repeat(3, minmax(180px, 1fr)); /* 3 columns for medium screens */
+        gap: 15px; /* Reduce gap size for better density */
+    }
+
+    .food-display h2 {
+        font-size: max(2.5vw, 20px); /* Slightly smaller heading for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .food-display-list {
+        grid-template-columns: repeat(2, minmax(160px, 1fr)); /* 2 columns for small screens */
+        gap: 10px; /* Further reduce gap for small screens */
+    }
+
+    .food-display h2 {
+        font-size: max(3vw, 18px); /* Smaller heading for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .food-display-list {
+        grid-template-columns: 1fr; /* Single column for very small screens */
+        gap: 5px; /* Minimal gap for extra compact layout */
+    }
+
+    .food-display h2 {
+        font-size: max(4vw, 16px); /* Very small heading for extra small screens */
+    }
+}

@@ -58,3 +58,67 @@
     border: 4px solid tomato;
     padding: 2px;
 }
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .explore-menu-list {
+        gap: 20px; /* Reduce gap for medium screens */
+    }
+
+    .explore-menu-list-items img {
+        width: 10vw; /* Slightly reduce image size */
+        min-width: 20px; /* Increase the minimum size */
+    }
+
+    .explore-menu-list-items p {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 768px) {
+    .explore-menu {
+        gap: 10px; /* Reduce overall gap */
+    }
+
+    .explore-menu-list {
+        gap: 15px; /* Further reduce gap for smaller screens */
+        padding: 0 10px; /* Add padding for list items */
+    }
+
+    .explore-menu-list-items img {
+        width: 12vw; /* Significantly reduce image size */
+        min-width: 22px; /* Increase the minimum size */
+    }
+
+    .explore-menu-list-items p {
+        font-size: 12px; /* Decrease font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .explore-menu {
+        gap: 5px; /* Minimize gap for very small screens */
+    }
+
+    .explore-menu h1 {
+        font-size: 18px; /* Smaller heading size */
+    }
+
+    .explore-menu-list {
+        flex-direction: column; /* Stack items vertically */
+        gap: 10px; /* Tighten gap */
+    }
+
+    .explore-menu-list-items img {
+        width: 15vw; /* Extremely small image size */
+        min-width: 25px; /* Minimize minimum width */
+    }
+
+    .explore-menu-list-items p {
+        font-size: 10px; /* Very small font size */
+    }
+
+    .explore-menu hr {
+        margin: 5px 0px; /* Smaller spacing for hr */
+    }
+}

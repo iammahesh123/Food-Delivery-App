@@ -1,8 +1,15 @@
 .navbar {
-    padding: 20px 0px;
+    padding: 20px 40px 10px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%; /* Ensure the navbar takes full width */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Ensure the navbar is aligned to the left */
+    z-index: 1000; /* Ensure it's above other content */
+    background-color: #fff; /* Optional: Change background color for better contrast */
+   
 }
 
 .navbar .logo {
@@ -60,14 +67,13 @@
     top: -8px;
     right: -8px;
 }
-
 /* Responsive styles */
 @media (max-width: 1024px) {
     .navbar-menu {
         display: none; /* Hide menu items on larger screens */
         flex-direction: column;
         gap: 10px;
-        align-items: center;
+        align-items: flex-start; /* Align menu items to the left */
         background-color: #fff;
         padding: 10px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
