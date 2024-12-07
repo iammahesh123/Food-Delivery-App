@@ -111,7 +111,8 @@
         overflow-x: auto; /* Enable horizontal scrolling */
         white-space: nowrap; /* Prevent items from wrapping to the next line */
         padding-bottom: 5px; /* Add some space to avoid scrollbar overlap */
-        scrollbar-width: thin; /* For Firefox, makes the scrollbar thinner */
+        scroll-behavior: smooth;
+        scrollbar-shadow-color: transparent;
     }
 
     .explore-menu-list::-webkit-scrollbar {
