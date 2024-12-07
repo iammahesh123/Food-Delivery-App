@@ -99,7 +99,7 @@
 @media (max-width: 480px) {
     .header {
         height: 50vw; /* Further adjust for mobile devices */
-        margin: 20px auto;
+        margin-top:50px;
     }
 
     .header-contents {
