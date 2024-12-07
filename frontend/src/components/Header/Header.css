@@ -16,7 +16,6 @@
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s;
-
 }
 
 .header-contents h2 {
@@ -38,5 +37,86 @@
     background-color: white;
     font-size: max(1vw,13px);
     border-radius: 50px;
+}
 
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .header {
+        height: 40vw; /* Adjust height for tablets */
+        margin: 20px auto;
+    }
+
+    .header-contents {
+        max-width: 60%;
+        bottom: 12%;
+        left: 5vw;
+        gap: 2vw;
+    }
+
+    .header-contents h2 {
+        font-size: max(5vw, 24px);
+    }
+
+    .header-contents p {
+        font-size: 1.1vw;
+    }
+
+    .header-contents button {
+        padding: 1.2vw 2.6vw;
+        font-size: max(1.1vw, 14px);
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        height: 45vw; /* Adjust height for smaller devices */
+        margin: 15px auto;
+    }
+
+    .header-contents {
+        max-width: 70%;
+        bottom: 15%;
+        left: 4vw;
+        gap: 2.5vw;
+    }
+
+    .header-contents h2 {
+        font-size: max(5.5vw, 26px);
+    }
+
+    .header-contents p {
+        font-size: 1.2vw;
+    }
+
+    .header-contents button {
+        padding: 1.3vw 2.8vw;
+        font-size: max(1.2vw, 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 50vw; /* Further adjust for mobile devices */
+        margin: 10px auto;
+    }
+
+    .header-contents {
+        max-width: 80%;
+        bottom: 20%;
+        left: 3vw;
+        gap: 3vw;
+    }
+
+    .header-contents h2 {
+        font-size: max(6vw, 28px);
+    }
+
+    .header-contents p {
+        font-size: 1.3vw;
+    }
+
+    .header-contents button {
+        padding: 1.5vw 3vw;
+        font-size: max(1.4vw, 16px);
+    }
 }

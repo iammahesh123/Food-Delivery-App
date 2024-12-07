@@ -4,6 +4,9 @@ import {assets} from '../../assets/assets'
 
 const Navbar = () => {
     const [menu, setMenu] = useState("home")
+    const toggleMenu = () => {
+        document.querySelector('.navbar-menu').classList.toggle('active');
+    };
   return (
     <div className='navbar'>
         <img src={assets.logo} alt="" className="logo" />
@@ -21,7 +24,9 @@ const Navbar = () => {
             </div>
             <button>Sign In</button>
         </div>
-      
+        <div className="menu-toggle" onClick={toggleMenu}>
+                ☰ {/* Hamburger icon for menu toggle */}
+            </div>
     </div>
   )
 }

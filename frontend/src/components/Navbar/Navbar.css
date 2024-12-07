@@ -7,7 +7,6 @@
 
 .navbar .logo {
     width: 150px;
-
 }
 
 .navbar-menu {
@@ -22,7 +21,6 @@
     display: flex;
     align-items: center;
     gap: 40px;
-
 }
 
 .navbar button {
@@ -37,8 +35,9 @@
 }
 
 .navbar button:hover {
-     background-color: #fff4f2;
-} 
+    background-color: #fff4f2;
+}
+
 .navbar .active {
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
@@ -51,6 +50,7 @@
 .navbar-search-icon {
     position: relative;
 }
+
 .navbar-search-icon .dot {
     position: absolute;
     min-width: 10px;
@@ -59,6 +59,95 @@
     border-radius: 5px;
     top: -8px;
     right: -8px;
+}
 
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .navbar-menu {
+        display: none; /* Hide menu items on larger screens */
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        background-color: #fff;
+        padding: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        position: absolute;
+        top: 60px; /* Position menu below navbar */
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
 
+    .navbar-menu.active {
+        display: flex; /* Show menu items when active */
+    }
+
+    .navbar-right {
+        display: none; /* Hide right section on smaller screens */
+    }
+
+    .navbar button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on smaller screens */
+        cursor: pointer;
+        font-size: 24px;
+        color: #49557e;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .menu-toggle {
+        display: block; /* Ensure toggle button is visible */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar .logo {
+        width: 100px;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+        width: 100%;
+        display: none; /* Hide by default */
+    }
+
+    .navbar-menu li {
+        text-align: center;
+    }
+
+    .navbar-search-icon {
+        display: block;
+    }
+
+    .navbar button {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    .navbar .active {
+        padding-bottom: 1px;
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Show the menu toggle button on mobile screens */
+    }
+}
+
+/* Hide the menu toggle image on larger screens */
+@media (min-width: 1025px) {
+    .menu-toggle {
+        display: none; /* Hide on larger screens */
+    }
 }
