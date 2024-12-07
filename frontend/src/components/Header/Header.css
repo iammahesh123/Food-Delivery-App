@@ -44,8 +44,8 @@
 /* Responsive styles */
 @media (max-width: 1024px) {
     .header {
-        height: 40vw; /* Adjust height for tablets */
-        margin: 20px auto;
+        height: 40vw; 
+        margin-top: 60px;
     }
 
     .header-contents {
@@ -72,7 +72,7 @@
 @media (max-width: 768px) {
     .header {
         height: 45vw; /* Adjust height for smaller devices */
-        margin: 15px auto;
+        margin-top: 90px;
     }
 
     .header-contents {
@@ -99,7 +99,7 @@
 @media (max-width: 480px) {
     .header {
         height: 50vw; /* Further adjust for mobile devices */
-        margin: 10px auto;
+        margin: 20px auto;
     }
 
     .header-contents {
@@ -119,6 +119,6 @@
 
     .header-contents button {
         padding: 1.5vw 3vw;
-        font-size: max(1.4vw, 16px);
+        font-size: max(1.4vw, 12px);
     }
 }
