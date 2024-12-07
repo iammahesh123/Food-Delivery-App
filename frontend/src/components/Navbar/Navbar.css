@@ -154,6 +154,49 @@
 /* Hide the menu toggle image on larger screens */
 @media (min-width: 1025px) {
     .menu-toggle {
-        display: none; /* Hide on larger screens */
+        display: none; 
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .navbar .logo {
+        width: 100px;
+    }
+
+    .navbar-menu li {
+        font-size: 14px;
+    }
+
+    .navbar button {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar .logo {
+        width: 90px;
+    }
+
+    .menu-toggle {
+        font-size: 20px;
+    }
+
+    .navbar-menu li {
+        font-size: 12px;
+    }
+
+    .navbar button {
+        padding: 5px 12px;
+        font-size: 10px;
     }
 }
