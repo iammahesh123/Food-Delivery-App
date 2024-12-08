@@ -6,7 +6,7 @@
     margin-top: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap; /* Allow the form to stack vertically on small screens */
+    flex-wrap: wrap; 
   }
   
   .place-order-left,
