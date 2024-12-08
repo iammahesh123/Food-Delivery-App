@@ -1,24 +1,21 @@
+/* Navbar styles */
 .navbar {
     padding: 20px 40px 10px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    width: 100%;
-    /* Ensure the navbar takes full width */
-    top: 0;
-    /* Position at the top of the viewport */
-    left: 0;
-    /* Ensure the navbar is aligned to the left */
-    z-index: 1000;
-    /* Ensure it's above other content */
-    background-color: #fff;
-    /* Optional: Change background color for better contrast */
 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
 }
 
 .navbar .logo {
     width: 150px;
+    /* Default width */
+    transition: width 0.3s;
 }
 
 .navbar-menu {
@@ -29,12 +26,14 @@
     font-size: 18px;
 }
 
+/* Navbar right section styles */
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
+/* Button styles */
 .navbar button {
     background: transparent;
     font-size: 16px;
@@ -50,15 +49,18 @@
     background-color: #fff4f2;
 }
 
+/* Active link styles */
 .navbar .active {
     padding-bottom: 2px;
     border-bottom: 2px solid #49557e;
 }
 
+/* List item cursor */
 .navbar li {
     cursor: pointer;
 }
 
+/* Search icon styles */
 .navbar-search-icon {
     position: relative;
 }
@@ -119,11 +121,21 @@
         padding: 7px 20px;
         font-size: 15px;
     }
+
+    /* Center the logo on smaller screens */
+    .navbar .logo {
+        margin: 0 auto; /* Center the logo */
+    }
 }
 
+/* Hide menu items on smaller screens */
 @media (max-width: 715px) {
-
     .navbar-menu {
         display: none;
+    }
+
+    .navbar .logo {
+        width: 100px; /* Focused logo width for smaller screens */
+        margin: 0 auto; /* Center the logo */
     }
 }
