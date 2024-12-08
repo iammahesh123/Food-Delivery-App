@@ -1,23 +1,24 @@
-/* Navbar styles */
+/* Navbar Container */
 .navbar {
     padding: 20px 40px 10px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
     background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
+/* Logo */
 .navbar .logo {
     width: 150px;
-    /* Default width */
     transition: width 0.3s;
 }
 
+/* Menu Styles */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -26,14 +27,30 @@
     font-size: 18px;
 }
 
-/* Navbar right section styles */
+.navbar-menu a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.navbar-menu a:hover {
+    color: tomato;
+}
+
+.navbar .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+    pointer-events: none; /* Prevent redundant clicks */
+}
+
+/* Right Section */
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
-/* Button styles */
+/* Button Styles */
 .navbar button {
     background: transparent;
     font-size: 16px;
@@ -49,33 +66,30 @@
     background-color: #fff4f2;
 }
 
-/* Active link styles */
-.navbar .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557e;
-}
-
-/* List item cursor */
-.navbar li {
-    cursor: pointer;
-}
-
-/* Search icon styles */
+/* Search Icon Styles */
 .navbar-search-icon {
     position: relative;
 }
 
-.navbar-search-icon .dot {
+/* Cart Count */
+.navbar-search-icon .cart-count {
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
+    top: -10px;
+    right: -10px;
     background-color: tomato;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
+    color: white;
+    border-radius: 50%;
+    min-width: 18px;
+    min-height: 18px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding: 2px;
 }
 
-/* Responsive styles */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .navbar .logo {
         width: 140px;
@@ -122,20 +136,19 @@
         font-size: 15px;
     }
 
-    /* Center the logo on smaller screens */
+    /* Center logo */
     .navbar .logo {
-        margin: 0 auto; /* Center the logo */
+        margin: 0 auto;
     }
 }
 
-/* Hide menu items on smaller screens */
 @media (max-width: 715px) {
     .navbar-menu {
         display: none;
     }
 
     .navbar .logo {
-        width: 100px; /* Focused logo width for smaller screens */
-        margin: 0 auto; /* Center the logo */
+        width: 100px;
+        margin: 0 auto;
     }
 }
