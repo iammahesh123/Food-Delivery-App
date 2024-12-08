@@ -1,0 +1,209 @@
+/* General cart styles */
+.cart {
+    margin-top: 50px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid layout for cart items */
+.cart-items-title, .cart-items-item {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    color: grey;
+    font-size: max(1vw, 12px);
+}
+
+/* Styling for images in cart */
+.cart-items-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* General button styles */
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+/* Checkout button styles */
+.checkout-button {
+    background-color: tomato;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.checkout-button:hover {
+    background-color: darkgreen;
+}
+
+/* Promo button styles */
+.promo-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.promo-button:hover {
+    background-color: darkblue;
+}
+
+/* Divider styles */
+.cart-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, #e0e0e0, #000, #e0e0e0);
+    margin: 10px 0;
+}
+
+/* Cart total section */
+.cart-total {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Promo code section */
+.cart-promocode {
+    margin-top: 20px;
+}
+
+.cart-promocode-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cart-promocode-input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.cart-promocode-input button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cart-promocode-input button:hover {
+    background-color: darkblue;
+}
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+    .cart-items-title, .cart-items-item {
+        grid-template-columns: 1fr 1fr 1fr 0.5fr;
+        font-size: 12px;
+    }
+
+    .cart-items-title p:nth-child(4),
+    .cart-items-title p:nth-child(5),
+    .cart-items-item p:nth-child(4),
+    .cart-items-item p:nth-child(5) {
+        display: none;
+    }
+
+    .cart-items-item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .checkout-button {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+
+    .promo-button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .cart-total {
+        padding: 15px;
+    }
+
+    .cart-total-details {
+        font-size: 12px;
+    }
+
+    .cart {
+        margin-top: 20px;
+        padding: 15px;
+    }
+}
+
+/* Responsive styles for extra small screens */
+@media (max-width: 480px) {
+    .cart-items-title, .cart-items-item {
+        grid-template-columns: 1fr 1fr 0.5fr;
+        font-size: 10px;
+    }
+
+    .cart-items-title p:nth-child(3),
+    .cart-items-title p:nth-child(4),
+    .cart-items-title p:nth-child(5),
+    .cart-items-item p:nth-child(3),
+    .cart-items-item p:nth-child(4),
+    .cart-items-item p:nth-child(5) {
+        display: none;
+    }
+
+    .cart-items-item img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .checkout-button {
+        font-size: 10px;
+        padding: 6px 12px;
+    }
+
+    .promo-button {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+
+    .cart-total {
+        font-size: 10px;
+        padding: 10px;
+    }
+}
