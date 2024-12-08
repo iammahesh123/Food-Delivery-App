@@ -4,12 +4,17 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%; /* Ensure the navbar takes full width */
-    top: 0; /* Position at the top of the viewport */
-    left: 0; /* Ensure the navbar is aligned to the left */
-    z-index: 1000; /* Ensure it's above other content */
-    background-color: #fff; /* Optional: Change background color for better contrast */
-   
+    width: 100%;
+    /* Ensure the navbar takes full width */
+    top: 0;
+    /* Position at the top of the viewport */
+    left: 0;
+    /* Ensure the navbar is aligned to the left */
+    z-index: 1000;
+    /* Ensure it's above other content */
+    background-color: #fff;
+    /* Optional: Change background color for better contrast */
+
 }
 
 .navbar .logo {
@@ -67,136 +72,58 @@
     top: -8px;
     right: -8px;
 }
+
 /* Responsive styles */
 @media (max-width: 1024px) {
-    .navbar-menu {
-        display: none; /* Hide menu items on larger screens */
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start; /* Align menu items to the left */
-        background-color: #fff;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        position: absolute;
-        top: 60px; /* Position menu below navbar */
-        left: 0;
-        right: 0;
-        z-index: 10;
+    .navbar .logo {
+        width: 140px;
     }
 
-    .navbar-menu.active {
-        display: flex; /* Show menu items when active */
+    .navbar-menu {
+        gap: 20px;
+        font-size: 17px;
     }
 
     .navbar-right {
-        display: none; /* Hide right section on smaller screens */
+        gap: 30px;
     }
 
-    .navbar button {
-        padding: 8px 20px;
-        font-size: 14px;
+    .navbar-right img {
+        width: 22px;
     }
 
-    .menu-toggle {
-        display: block; /* Show the menu toggle button on smaller screens */
-        cursor: pointer;
-        font-size: 24px;
-        color: #49557e;
+    .navbar-right button {
+        padding: 8px 25px;
     }
 }
 
-@media (max-width: 768px) {
-    .navbar .menu-toggle {
-        display: block; /* Ensure toggle button is visible */
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 10px 0;
-    }
-
+@media (max-width: 900px) {
     .navbar .logo {
-        width: 100px;
+        width: 120px;
     }
 
     .navbar-menu {
-        flex-direction: column;
-        gap: 10px;
-        padding: 15px;
-        width: 100%;
-        display: none; /* Hide by default */
+        gap: 15px;
+        font-size: 16px;
     }
 
-    .navbar-menu li {
-        text-align: center;
+    .navbar-right {
+        gap: 20px;
     }
 
-    .navbar-search-icon {
-        display: block;
+    .navbar-right img {
+        width: 20px;
     }
 
-    .navbar button {
-        padding: 6px 15px;
-        font-size: 12px;
-    }
-
-    .navbar .active {
-        padding-bottom: 1px;
-        border-bottom: none;
-    }
-
-    .menu-toggle {
-        display: block; /* Show the menu toggle button on mobile screens */
+    .navbar-right button {
+        padding: 7px 20px;
+        font-size: 15px;
     }
 }
 
-/* Hide the menu toggle image on larger screens */
-@media (min-width: 1025px) {
-    .menu-toggle {
-        display: none; 
-    }
-}
+@media (max-width: 715px) {
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 10px;
-    }
-
-    .navbar .logo {
-        width: 100px;
-    }
-
-    .navbar-menu li {
-        font-size: 14px;
-    }
-
-    .navbar button {
-        padding: 6px 15px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 8px 10px;
-    }
-
-    .navbar .logo {
-        width: 90px;
-    }
-
-    .menu-toggle {
-        font-size: 20px;
-    }
-
-    .navbar-menu li {
-        font-size: 12px;
-    }
-
-    .navbar button {
-        padding: 5px 12px;
-        font-size: 10px;
+    .navbar-menu {
+        display: none;
     }
 }
