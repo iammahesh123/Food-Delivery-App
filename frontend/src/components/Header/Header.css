@@ -1,124 +1,81 @@
 .header {
     height: 34vw;
     margin-top: 90px;
-    background: url('/header_img.png') no-repeat;
-    background-size: contain;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
     position: relative;
     z-index: 1;
-    
 }
 
 .header-contents {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     gap: 1.5vw;
     max-width: 50%;
     bottom: 10%;
     left: 6vw;
-    animation: fadeIn 3s;
+    animation: fadeIn 3s ease-in-out;
 }
 
 .header-contents h2 {
     font-weight: 500;
     color: white;
-    font-size: max(4.5vw, 22px);
+    font-size: clamp(22px, 4.5vw, 40px);
 }
 
 .header-contents p {
     color: white;
-    font-size: 1vw;
+    font-size: clamp(12px, 1vw, 16px);
 }
 
 .header-contents button {
     border: none;
     color: #747474;
     font-weight: 500;
-    padding: 1vw 2.3vw;
+    padding: clamp(10px, 1vw, 16px) clamp(20px, 2.3vw, 32px);
     background-color: white;
-    font-size: max(1vw,13px);
+    background-size: contain;
+    font-size: clamp(13px, 1vw, 18px);
     border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.header-contents button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
 }
 
 /* Responsive styles */
 @media (max-width: 1024px) {
     .header {
-        height: 40vw; 
-        margin-top: 60px;
+        height: auto; 
+        aspect-ratio: 16 / 9; 
     }
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header {
+        height: auto; 
+        aspect-ratio: 16 / 9; 
+    }
+
 
     .header-contents {
         max-width: 60%;
-        bottom: 12%;
-        left: 5vw;
         gap: 2vw;
     }
 
-    .header-contents h2 {
-        font-size: max(5vw, 24px);
-    }
-
     .header-contents p {
-        font-size: 1.1vw;
+        display: none;
     }
 
     .header-contents button {
-        padding: 1.2vw 2.6vw;
-        font-size: max(1.1vw, 14px);
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        height: 45vw; /* Adjust height for smaller devices */
-        margin-top: 90px;
-    }
-
-    .header-contents {
-        max-width: 70%;
-        bottom: 15%;
-        left: 4vw;
-        gap: 2.5vw;
-    }
-
-    .header-contents h2 {
-        font-size: max(5.5vw, 26px);
-    }
-
-    .header-contents p {
-        font-size: 1.2vw;
-    }
-
-    .header-contents button {
-        padding: 1.3vw 2.8vw;
-        font-size: max(1.2vw, 15px);
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        height: 50vw; /* Further adjust for mobile devices */
-        margin-top:80px;
-    }
-
-    .header-contents {
-        max-width: 80%;
-        bottom: 20%;
-        left: 3vw;
-        gap: 3vw;
-    }
-
-    .header-contents h2 {
-        font-size: max(6vw, 28px);
-    }
-
-    .header-contents p {
-        font-size: 1.3vw;
-    }
-
-    .header-contents button {
-        padding: 1.5vw 3vw;
-        font-size: max(1.4vw, 12px);
+        padding: clamp(15px, 2vw, 25px) clamp(30px, 4vw, 50px);
     }
 }
