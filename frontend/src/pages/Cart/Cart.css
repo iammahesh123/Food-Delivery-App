@@ -59,7 +59,7 @@ button:hover {
 
 /* Promo button styles */
 .promo-button {
-    background-color: blue;
+    background-color: tomato;
     color: white;
     border: none;
     padding: 5px 15px;
@@ -69,7 +69,7 @@ button:hover {
 }
 
 .promo-button:hover {
-    background-color: darkblue;
+    background-color: blue;
 }
 
 /* Divider styles */
@@ -119,14 +119,14 @@ button:hover {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: blue;
+    background-color: tomato;
     color: white;
     cursor: pointer;
     font-size: 14px;
 }
 
 .cart-promocode-input button:hover {
-    background-color: darkblue;
+    background-color: blue;
 }
 /* Responsive styles for small screens */
 @media (max-width: 768px) {
