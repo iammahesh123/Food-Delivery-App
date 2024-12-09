@@ -53,6 +53,13 @@ const Cart = () => {
       {cartData.length > 0 && (
         <div className="cart-bottom">
           <hr />
+          <div className="cart-promocode">
+            <p>If you have a promo code, enter it here:</p>
+            <div className="cart-promocode-input">
+              <input type="text" placeholder="Promo code" />
+              <button className="promo-button">Submit</button>
+            </div>
+          </div>
           <div className="cart-total">
             <h2>Cart Totals</h2>
             <div>
@@ -72,13 +79,6 @@ const Cart = () => {
               </div>
             </div>
             <button onClick={() => navigate('/order')} className="checkout-button">PROCEED TO CHECKOUT</button>
-          </div>
-          <div className="cart-promocode">
-            <p>If you have a promo code, enter it here:</p>
-            <div className="cart-promocode-input">
-              <input type="text" placeholder="Promo code" />
-              <button className="promo-button">Submit</button>
-            </div>
           </div>
         </div>
       )}
