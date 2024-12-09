@@ -7,16 +7,20 @@ import { StoreContext } from '../../context/StoreContext';
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState('home');
   const { cartItems } = useContext(StoreContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   // Calculate the total number of items in the cart
   const cartItemCount = Object.values(cartItems).reduce((total, count) => total + count, 0);
 
   return (
+
     <div className="navbar">
       <Link to="/">
         <img src={assets.logo} alt="Logo" className="logo" />
       </Link>
-      <ul className="navbar-menu">
+
+      <ul className={`navbar-menu ${menuOpen ? 'mobile-visible' : ''}`}>
         <Link to="/" onClick={() => setMenu('home')} className={menu === 'home' ? 'active' : ''}>
           Home
         </Link>
@@ -24,13 +28,16 @@ const Navbar = ({ setShowLogin }) => {
           Menu
         </a>
         <a href="#app-download" onClick={() => setMenu('mobile app')} className={menu === 'mobile app' ? 'active' : ''}>
-          Mobile APP
+          MobileApp
         </a>
-        <a href="#footer" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
+        <a href="#contactus" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
           Contact Us
         </a>
       </ul>
       <div className="navbar-right">
+        {/* <div className="navbar-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          <img src={assets.hamburger} alt="Menu" />
+        </div> */}
         <img src={assets.search_icon} alt="Search" />
         <div className="navbar-search-icon">
           <Link to="/cart">

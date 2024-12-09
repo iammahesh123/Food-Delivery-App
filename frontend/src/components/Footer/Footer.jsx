@@ -8,7 +8,12 @@ const Footer = () => {
         <div className="footer-content">
             <div className="footer-content-left">
                 <img src={assets.logo} alt='Company Logo'/>
-                <p>Experience the finest flavors from around the world with C Tomato, where exceptional cuisine meets convenience. Our mission is to deliver delicious, quality meals directly to you, ensuring a delightful dining experience from the comfort of your home. </p>
+                <p>Experience the finest flavors from around 
+                    the world with C Tomato, where exceptional 
+                    cuisine meets convenience. Our mission is to 
+                    deliver delicious, quality meals directly to you, 
+                    ensuring a delightful dining experience from the 
+                    comfort of your home. </p>
                 <div className="footer-social-icons">
                     <img src={assets.facebook_icon} alt="Facebook" />
                     <img src={assets.twitter_icon} alt="Twitter" />
@@ -21,7 +26,7 @@ const Footer = () => {
                     <li>Home</li>
                     <li>About Us</li>
                     <li>Delivery</li>
-                    <li>Privacy Policy</li>
+                    <li>Privacy_Policy</li>
                 </ul>
             </div>
             <div className="footer-content-right">
@@ -34,7 +39,7 @@ const Footer = () => {
         </div>
         <hr/>
         <p className="footer-copyright">
-            &copy; 2024 C Tomato.com. All Rights Reserved.
+            2024 &copy; Tomato.com. All Rights Reserved.
         </p>
     </div>
   )

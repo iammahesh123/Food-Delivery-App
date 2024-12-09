@@ -1,3 +1,4 @@
+import hamburger from './hamburger_icon.png'
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
 import header_img from './header_img.png'
@@ -79,7 +80,8 @@ export const assets = {
     profile_icon,
     logout_icon,
     bag_icon,
-    parcel_icon
+    parcel_icon,
+    hamburger
 }
 
 export const menu_list = [
