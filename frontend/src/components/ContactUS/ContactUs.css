@@ -8,24 +8,25 @@
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
-    margin: 50px auto; /* Center container horizontally */
+    margin: 50px auto;
     gap: 20px;
     transition: transform 0.3s ease-in-out;
 }
-.contact-main-container{
+
+.contact-main-container {
     margin-top: 60px;
 }
-.contact-main-container h1{
+
+.contact-main-container h1 {
     font-weight: 500;
     color: #262626;
 }
-.contact-main-container p{
+
+.contact-main-container p {
     margin-top: 10px;
     max-width: 60%;
     font-size: 18px;
-
 }
-
 
 .contact-us-container:hover {
     transform: scale(1.02);
@@ -49,12 +50,18 @@
     color: #555;
     margin-bottom: 15px;
     line-height: 1.5;
+    width: 100%;
+    padding: 0;
 }
 
 /* Right Section - Form */
 .contact-us-right {
     flex: 1;
     padding: 20px;
+}
+
+.contact-us-right h2 {
+    margin-bottom: 20px;
 }
 
 .contact-form {
@@ -91,61 +98,88 @@
 }
 
 .contact-form button:hover {
-    background: red;
+    background: rgb(134, 16, 16);
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .contact-us-container {
-        flex-direction: column; /* Stack sections vertically */
-        align-items: center; /* Center align content */
-        gap: 20px; /* Adjusted gap for better spacing */
-        padding: 20px; /* Reduced padding */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
     }
 
     .contact-us-left,
     .contact-us-right {
-        width: 100%; /* Full width for each section */
-        padding: 10px; /* Reduced padding for small screens */
+        width: 100%;
+        padding: 10px;
     }
 
     .contact-us-left h2 {
-        font-size: 1.8rem; /* Adjust heading size for smaller screens */
-        text-align: center; /* Center heading text */
-        margin-bottom: 15px; /* Add more spacing */
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    .contact-main-container h1{
+        font-size: 1.8rem;
+        text-align:center;
+        padding-right: 1cm;
+        margin-bottom: 15px;
     }
 
     .contact-us-left p {
-        text-align: justify; /* Justify text for better readability */
-        font-size: 0.9rem; /* Slightly reduce font size */
+        text-align: justify;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+        padding: 0 20px; /* Adjust padding for better alignment */
+        max-width: 100%; /* Allow paragraph to take up full width on small screens */
     }
 
     .contact-us-right {
-        padding-top: 0; /* Align form closer to the left section */
+        padding-top: 0;
     }
 
     .contact-form button {
-        width: 100%; /* Button spans the form width */
-        font-size: 1rem; /* Maintain consistent size */
+        width: 100%;
+        font-size: 1rem;
+    }
+    .contact-main-container p {
+        max-width: 80%;
+        font-size: 16px;
+        text-align: justify;
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 480px) {
     .contact-us-left h2 {
-        font-size: 1.5rem; /* Further reduce heading size */
+        font-size: 1.5rem;
+    }
+    .contact-main-container h1{
+        font-size: 1.5rem;
     }
 
     .contact-us-left p {
-        font-size: 0.85rem; /* Adjust paragraph font size */
+        font-size: 0.85rem;
+        text-align: justify;
+        margin-bottom: 15px;
+        padding: 0 20px;
     }
 
     .contact-form input,
     .contact-form textarea {
-        font-size: 0.9rem; /* Reduce input font size for compact design */
+        font-size: 0.9rem;
     }
 
     .contact-form button {
-        font-size: 0.9rem; /* Smaller button text */
-        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    .contact-main-container p {
+        max-width: 90%;
+        font-size: 14px;
+        text-align: justify;
+        padding: 0 15px;
     }
 }
