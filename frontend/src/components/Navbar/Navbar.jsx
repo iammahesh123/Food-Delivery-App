@@ -6,8 +6,9 @@ import { StoreContext } from '../../context/StoreContext';
 
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState('home');
-  const { cartItems } = useContext(StoreContext);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen,setMenuOpen] = useState();
+  const { cartItems, token, setToken } = useContext(StoreContext);
+
 
 
   // Calculate the total number of items in the cart
@@ -38,7 +39,7 @@ const Navbar = ({ setShowLogin }) => {
         {/* <div className="navbar-hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           <img src={assets.hamburger} alt="Menu" />
         </div> */}
-        <img src={assets.search_icon} alt="Search" />
+        
         <div className="navbar-search-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="Cart" />
@@ -49,7 +50,19 @@ const Navbar = ({ setShowLogin }) => {
             </div>
           )}
         </div>
-        <button onClick={() => setShowLogin(true)}>Sign In</button>
+        {!token ? <button onClick={() => setShowLogin(true)}>Sign In</button> : <div className='navbar-profile'>
+         
+          <img src={assets.profile_icon} alt="" />
+          <ul className="nav-profile-dropdown">
+            <li><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
+            <hr/>
+            
+           <li><img src={assets.logout_icon} alt="" /><p>Logout</p> </li>
+          </ul>
+
+        </div>}
+
+
       </div>
     </div>
   );

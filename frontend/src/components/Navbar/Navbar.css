@@ -102,6 +102,67 @@
     padding: 2px;
 }
 
+.navbar-profile {
+    position: relative;
+    cursor: pointer; /* Indicate interactable area */
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 100;
+    min-width: 200px; /* Ensure a consistent dropdown width */
+    background-color: #fff; /* Neutral dropdown background */
+    border: 1px solid #ddd; /* Subtle border for structure */
+    border-radius: 8px; /* Smooth corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 12px 0; /* Top and bottom padding for dropdown items */
+    list-style: none;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(-10px); /* Slide-up animation */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth reveal */
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: block; /* Show dropdown */
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Reset slide animation */
+}
+
+/* Dropdown Items */
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #49557e;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-profile-dropdown li:hover {
+    background-color: #f8f9fa; /* Slight background change on hover */
+    color: tomato; /* Highlight text color */
+    font-weight: 500;
+}
+
+/* Separator Line */
+.nav-profile-dropdown hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0; /* Subtle separator */
+    margin: 8px 0; /* Spacing around the line */
+}
+
+/* Dropdown Icons */
+.nav-profile-dropdown li img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: inline-block;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .navbar .logo {
