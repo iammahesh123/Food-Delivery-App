@@ -5,14 +5,13 @@ import morgan from "morgan";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
-import "dotenv/config.js"
+import "dotenv/config.js";
 
 // Load environment variables
 dotenv.config();
 
 // App configuration
 const app = express();
-const port = process.env.PORT || 4000;
 
 // Middleware configuration
 app.use(express.json());
@@ -27,9 +26,7 @@ app.use("/images", express.static("uploads"));
 
 // API Endpoints
 app.use("/api/food", foodRouter);
-
-//user endpoints
-app.use("/api/users",userRouter)
+app.use("/api/users", userRouter);
 
 app.get("/", (req, res) => {
     res.send("API is working");
@@ -52,7 +49,5 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server started on http://localhost:${port}`);
-});
+// Export the app for Vercel
+export default app;
