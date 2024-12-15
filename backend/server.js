@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import { connectDB } from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import userRouter from "./routes/userRoute.js";
+import "dotenv/config.js"
 
 // Load environment variables
 dotenv.config();
@@ -25,6 +27,9 @@ app.use("/images", express.static("uploads"));
 
 // API Endpoints
 app.use("/api/food", foodRouter);
+
+//user endpoints
+app.use("/api/users",userRouter)
 
 app.get("/", (req, res) => {
     res.send("API is working");
