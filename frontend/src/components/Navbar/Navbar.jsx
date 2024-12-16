@@ -25,15 +25,18 @@ const Navbar = ({ setShowLogin }) => {
         <Link to="/" onClick={() => setMenu('home')} className={menu === 'home' ? 'active' : ''}>
           Home
         </Link>
-        <a href="#explore-menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>
+        <Link to="/explore-menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>
           Menu
-        </a>
+        </Link>
+        <Link to="/restaurants" onClick={() => setMenu('restaurants')} className={menu === 'restaurants' ? 'active' : ''}>
+          Restaurants
+        </Link>
         <a href="#app-download" onClick={() => setMenu('mobile app')} className={menu === 'mobile app' ? 'active' : ''}>
           MobileApp
         </a>
-        <a href="#contactus" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
+        <Link to="/contact-us" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
           Contact Us
-        </a>
+        </Link>
       </ul>
       <div className="navbar-right">
         {/* <div className="navbar-hamburger" onClick={() => setMenuOpen(!menuOpen)}>

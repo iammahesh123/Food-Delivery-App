@@ -109,20 +109,26 @@
     gap: 10px;
   }
 
-  .service-card {
-    width: 90%;
-    flex: none;
-  }
-
   .service-image {
     height: 150px;
   }
+
+  
+
 
   .service-title {
     font-size: 1.2rem;
     margin-left: 10px;
     text-align: center;
   }
+
+.service-link {
+  display: block;
+  text-decoration: underline;
+  color: tomato; /* Highlight color for the link */
+  margin: 0;
+  padding: 0;
+}
 
   .service-description {
     font-size: 0.9rem;
