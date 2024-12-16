@@ -45,6 +45,7 @@
 .footer-social-icons {
     display: flex;
     gap: 10px; /* Even spacing between icons */
+    margin-top: 15px
 }
 
 .footer-social-icons img {
