@@ -1,32 +1,64 @@
-.collections-container {
+/* Wrapper for horizontal scroll and buttons */
+.collections-wrapper {
+  position: relative;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  margin-top: 20px;
+}
+
+/* Scroll buttons for horizontal scrolling */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.scroll-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Horizontal scrolling container */
+.collections-container {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   gap: 15px;
+  padding: 10px 0;
   scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Internet Explorer */
+  scrollbar-width: none; /* Firefox */
 }
 
 .collections-container::-webkit-scrollbar {
-  display: none;
-}
-.collections-container {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  display: none; /* Chrome, Safari, Opera */
 }
 
+/* Text section */
 .collections {
   text-align: left;
   margin-top: 20px;
 }
 
 .collections h1 {
-  margin-bottom: 15px;
+  font-size: 2rem;
   color: #262626;
   font-weight: 500;
+  margin-bottom: 15px;
 }
 
 .collections p {
@@ -34,14 +66,13 @@
   color: #666;
   margin-top: 10px;
   max-width: 600px;
-  margin-left: 0;
-  margin-right: 0;
 }
 
+/* Individual card styles */
 .collections-card {
   flex: 0 0 auto;
   position: relative;
-  width: 300px;
+  width: 280px;
   height: 370px;
   background: #fff;
   border-radius: 10px;
@@ -75,6 +106,18 @@
 .card-overlay h3 {
   font-size: 1.3rem;
   margin: 0;
+  text-decoration: none;
+  transition: text-decoration 0.3s, color 0.3s;
+}
+
+.card-overlay a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-overlay a:hover h3 {
+  text-decoration: underline;
+  color: #f0a500; /* Optional accent color */
 }
 
 .rating-container {
@@ -93,15 +136,8 @@
   margin: 0;
 }
 
+/* Responsive design for smaller screens */
 @media (max-width: 768px) {
-  .collections-container {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    overflow-x: auto;
-  }
-
   .collections h1 {
     font-size: 1.8rem;
   }
@@ -114,6 +150,10 @@
     flex: 0 0 80%;
     width: 90%;
     height: auto;
+  }
+
+  .card-overlay {
+    padding: 10px;
   }
 
   .card-overlay h3 {

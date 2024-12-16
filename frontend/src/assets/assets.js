@@ -179,6 +179,18 @@ export const menu_list = [
             image:regional_flavor_res,
             name:"Regional Flavours",
             places:"132 places"
+        },
+        {
+            _id:"5",
+            image:newly_open_res,
+            name:"Newly Opened Restaurants",
+            places:"67 places"
+        },
+        {
+            _id:"6",
+            image:regional_flavor_res,
+            name:"Regional Flavours",
+            places:"132 places"
         }
     ]
 export const food_list = [
