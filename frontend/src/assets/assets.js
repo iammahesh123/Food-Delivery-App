@@ -65,6 +65,9 @@ import trending_res from './trending_res.jpg'
 import newly_open_res from './newly_open.jpg'
 import regional_flavor_res from './regional_flavours.jpg'
 import right_arrow from './right-arrow.png'
+import order_online_food from './order_online_food.jpg'
+import dinning from './dinning.jpg'
+import live_events from './live_events.jpg'
 
 export const assets = {
     logo,
@@ -91,7 +94,10 @@ export const assets = {
     trending_res,
     newly_open_res,
     regional_flavor_res,
-    right_arrow
+    right_arrow,
+    order_online_food,
+    dinning,
+    live_events
 }
 
 export const menu_list = [
@@ -127,6 +133,27 @@ export const menu_list = [
         menu_name: "Noodles",
         menu_image: menu_8
     }]
+
+    export const provideService = [
+        {
+            _id:"1",
+            image:order_online_food,
+            serviceName:"Order Online",
+            description:"Stay home and order to your doorstep"
+        },
+        {
+            _id:"2",
+            image:dinning,
+            serviceName:"Dining",
+            description:"View the City's favourite dining venues"
+        },
+        {
+            _id:"3",
+            image:live_events,
+            serviceName:"Live Events",
+            description:"Discover India's best events & concerts"
+        }
+    ]
 
     export const restraunts_list = [
         {

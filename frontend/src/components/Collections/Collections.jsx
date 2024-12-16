@@ -10,6 +10,8 @@ const Collections = () => {
         <p>
           Explore curated lists of top restaurants, cafes, pubs, and bars in Hyderabad, based on trends.
         </p>
+        
+
       </div>
       <div className="collections-container">
         {restraunts_list.map((restaurant) => (
