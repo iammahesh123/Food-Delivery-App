@@ -7,8 +7,11 @@ import foodRouter from "./routes/foodRoute.js";
 import userRouter from "./routes/userRoute.js";
 import "dotenv/config.js";
 
+
+
 // Load environment variables
 dotenv.config();
+const port = 4000
 
 // App configuration
 const app = express();
@@ -40,14 +43,6 @@ app.get("/api/health", (req, res) => {
     });
 });
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({
-        success: false,
-        message: "Internal Server Error",
-    });
-});
-
-// Export the app for Vercel
-export default app;
+app.listen(port,()=>{
+    console.log(`Server started on http://localhost:${port}`)
+})
