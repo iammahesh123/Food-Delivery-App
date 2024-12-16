@@ -14,11 +14,6 @@ const Footer = () => {
                     deliver delicious, quality meals directly to you, 
                     ensuring a delightful dining experience from the 
                     comfort of your home. </p>
-                <div className="footer-social-icons">
-                    <img src={assets.facebook_icon} alt="Facebook" />
-                    <img src={assets.twitter_icon} alt="Twitter" />
-                    <img src={assets.linkedin_icon} alt="LinkedIn" />
-                </div>
             </div>
             <div className="footer-content-center">
                 <h2>Company</h2>
@@ -35,11 +30,16 @@ const Footer = () => {
                     <li>+9897474433</li>
                     <li>dummy@gmail.com</li>
                 </ul>
+                <div className="footer-social-icons">
+                    <img src={assets.facebook_icon} alt="Facebook" />
+                    <img src={assets.twitter_icon} alt="Twitter" />
+                    <img src={assets.linkedin_icon} alt="LinkedIn" />
+                </div>
             </div>
         </div>
         <hr/>
         <p className="footer-copyright">
-            2024 &copy; Tomato.com. All Rights Reserved.
+            2024 &copy; foodguru.vercel.app All Rights Reserved.
         </p>
     </div>
   )
