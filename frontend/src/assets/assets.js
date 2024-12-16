@@ -60,6 +60,11 @@ import profile_icon from './profile_icon.png'
 import bag_icon from './bag_icon.png'
 import logout_icon from './logout_icon.png'
 import parcel_icon from './parcel_icon.png'
+import christmas_img from './christmas.jpg'
+import trending_res from './trending_res.jpg'
+import newly_open_res from './newly_open.jpg'
+import regional_flavor_res from './regional_flavours.jpg'
+import right_arrow from './right-arrow.png'
 
 export const assets = {
     logo,
@@ -81,7 +86,12 @@ export const assets = {
     logout_icon,
     bag_icon,
     parcel_icon,
-    hamburger
+    hamburger,
+    christmas_img,
+    trending_res,
+    newly_open_res,
+    regional_flavor_res,
+    right_arrow
 }
 
 export const menu_list = [
@@ -118,6 +128,32 @@ export const menu_list = [
         menu_image: menu_8
     }]
 
+    export const restraunts_list = [
+        {
+            _id:"1",
+            image:christmas_img,
+            name:"Christmas Special Restaurants",
+            places:"132 places"
+        },
+        {
+            _id:"2",
+            image:trending_res,
+            name:"Top 10 Trending Restaurants",
+            places:"52 places"
+        },
+        {
+            _id:"3",
+            image:newly_open_res,
+            name:"Newly Opened Restaurants",
+            places:"67 places"
+        },
+        {
+            _id:"4",
+            image:regional_flavor_res,
+            name:"Regional Flavours",
+            places:"132 places"
+        }
+    ]
 export const food_list = [
     {
         _id: "1",

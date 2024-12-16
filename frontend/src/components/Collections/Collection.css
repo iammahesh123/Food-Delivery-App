@@ -1,0 +1,121 @@
+/* Main container for the collections section */
+.collections-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the content */
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Add spacing between sections */
+  }
+  
+/* Collections heading section */
+.collections {
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .collections h1 {
+    margin-bottom: 15px; 
+    color: #262626;
+    text-decoration-style: bold;
+    font-weight: 500;
+
+  }
+  
+  .collections p {
+    font-size: 1rem;
+    color: #262626;
+    margin-top: 10px;
+    max-width: 600px; 
+    line-height: 1.5; 
+    margin-left: 0; 
+    margin-right: 0; 
+  }
+
+  
+  /* Card container */
+  .collections-card {
+    flex: 0 0 auto;
+    position: relative;
+    width: 300px;
+    height: 370px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .collections-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling (covers the entire card) */
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Overlay content */
+  .card-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    color: #fff; /* White text */
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .card-overlay h3 {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+  
+  .rating-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .rating-stars {
+    width: 100px; /* Adjust width to match the star image dimensions */
+    height: auto;
+  }
+  
+  .card-overlay p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+  /* Ensure responsiveness */
+  @media (max-width: 768px) {
+    .collections-container {
+      padding: 10px;
+    }
+  
+    .collections h1 {
+      font-size: 2rem;
+    }
+  
+    .collections p {
+      font-size: 0.9rem;
+    }
+  
+    .collections-card {
+      width: 100%; /* Make card full width on smaller screens */
+    }
+  
+    .card-overlay h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card-overlay p {
+      font-size: 0.9rem;
+    }
+  }
+  
