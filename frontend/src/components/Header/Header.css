@@ -1,13 +1,15 @@
+/* Header Container */
 .header {
     height: 34vw;
-    margin-top: 10px;
+    margin-top: 70px; /* Add this to push the header below the navbar */
     background: url('/header_img.png') no-repeat center center;
     background-size: cover;
     position: relative;
     z-index: 1;
-}
-
-.header-contents {
+  }
+  
+  /* Header Contents */
+  .header-contents {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -17,20 +19,21 @@
     bottom: 10%;
     left: 6vw;
     animation: fadeIn 3s ease-in-out;
-}
-
-.header-contents h2 {
+  }
+  
+  .header-contents h2 {
     font-weight: 500;
     color: white;
     font-size: clamp(22px, 4.5vw, 40px);
-}
-
-.header-contents p {
+  }
+  
+  .header-contents p {
     color: white;
     font-size: clamp(12px, 1vw, 16px);
-}
-
-.search-bar {
+  }
+  
+  /* Search Bar Styles */
+  .search-bar {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -40,9 +43,9 @@
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-}
-
-.search-bar input {
+  }
+  
+  .search-bar input {
     flex-grow: 1;
     padding: clamp(8px, 1vw, 14px);
     border: none;
@@ -52,14 +55,14 @@
     padding-left: 20px;
     color: #333;
     background-color: transparent;
-}
-
-.search-bar input::placeholder {
+  }
+  
+  .search-bar input::placeholder {
     color: #b3b3b3;
     font-style: italic;
-}
-
-.search-bar button {
+  }
+  
+  .search-bar button {
     border: none;
     padding: clamp(8px, 1vw, 14px) clamp(16px, 2vw, 24px);
     background-color: tomato;
@@ -69,54 +72,59 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.search-bar button:hover {
+  }
+  
+  .search-bar button:hover {
     background-color: red;
     transform: scale(1.05);
-}
-
-.search-bar button:active {
+  }
+  
+  .search-bar button:active {
     transform: scale(0.95);
-}
-
-@media (max-width: 1024px) {
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
     .header {
-        height: auto;
-        aspect-ratio: 16 / 9;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
     .header-contents {
-        max-width: 45%;
+      max-width: 45%;
     }
-}
-
-@media (max-width: 750px) {
+  }
+  
+  @media (max-width: 750px) {
     .header {
-        height: auto;
-        aspect-ratio: 16 / 9;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
-
+  
     .header-contents {
-        max-width: 60%;
-        gap: 2vw;
+      max-width: 60%;
+      gap: 2vw;
     }
-
+  
     .header-contents p {
-        display: none;
+      display: none;
     }
-
+  
     .search-bar {
-        max-width: 100%;
-        border-radius: 5px;
+      max-width: 100%;
+      max-height: 20px;
+      border-radius: 10px;
     }
-
+  
     .search-bar input {
-        font-size: clamp(10px, 1vw, 14px);
-        padding: 10px;
+        padding-left: 1px;
+        color: #333;
     }
-
     .search-bar button {
-        padding: clamp(10px, 1.5vw, 20px);
-        font-size: clamp(12px, 1vw, 14px);
+        font-size: clamp(11px, 1vw, 1px);
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: -100px;
     }
-}
+  
+  }
+  
