@@ -21,7 +21,7 @@ const Footer = () => {
                     <li>Home</li>
                     <li>About Us</li>
                     <li>Delivery</li>
-                    <li>Privacy_Policy</li>
+                    <li>Privacy Policy</li>
                 </ul>
             </div>
             <div className="footer-content-right">
