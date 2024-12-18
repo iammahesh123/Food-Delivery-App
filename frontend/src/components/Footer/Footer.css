@@ -1,3 +1,17 @@
+/* Overall page structure should be using flex to ensure footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .footer {
     width: 100%;
     background-color: #333;
@@ -5,29 +19,41 @@
     padding: 20px 0;
     text-align: start;
     margin-top: 50px;
-    
 }
 
 .footer-content {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
-    flex-wrap: wrap; 
-    gap: 20px; 
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 50px;
-
 }
 
 .footer-content-left,
 .footer-content-center,
 .footer-content-right {
-    flex: 1; 
-    max-width: clamp(200px, 30%, 300px); 
+    flex: 1;
+    max-width: clamp(200px, 30%, 300px);
 }
 
+.footer-content-center ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-content-center ul li {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-content-center ul li:last-child {
+    white-space: nowrap;
+}
 
 .footer-content-center {
-    flex: 0; 
+    flex: 0;
 }
 
 .footer-content-left img {
@@ -44,7 +70,8 @@
 
 .footer-social-icons {
     display: flex;
-    gap: 10px; /* Even spacing between icons */
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .footer-social-icons img {
@@ -66,8 +93,6 @@
 .footer-content-center ul,
 .footer-content-right ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 .footer-content-center ul li,
@@ -95,9 +120,10 @@
     margin-bottom: -10px;
 }
 
+/* Media Queries */
 @media (max-width: 750px) {
     .footer-content {
-        flex-direction: column; /* Stack sections vertically */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -105,7 +131,7 @@
     .footer-content-center,
     .footer-content-right {
         max-width: 100%;
-        text-align: center; /* Center-align content on smaller screens */
+        text-align: center;
     }
 
     .footer-social-icons {
