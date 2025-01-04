@@ -49,9 +49,9 @@ const Navbar = ({ setShowLogin }) => {
         <Link to="/restaurants" onClick={() => setMenu('restaurants')} className={menu === 'restaurants' ? 'active' : ''}>
           Restaurants
         </Link>
-        <a href="#" onClick={() => setMenu('mobile app')} className={menu === 'mobile app' ? 'active' : ''}>
+        <Link to="/collections" onClick={() => setMenu('collections')} className={menu === 'mobile app' ? 'active' : ''}>
           Collections
-        </a>
+        </Link>
         <Link to="/contact-us" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
           Contact Us
         </Link>
