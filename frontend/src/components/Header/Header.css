@@ -112,7 +112,7 @@
     .search-bar {
       max-width: 100%;
       max-height: 20px;
-      border-radius: 10px;
+      border-radius: 3px;
     }
   
     .search-bar input {

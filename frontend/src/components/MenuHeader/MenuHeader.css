@@ -1,12 +1,13 @@
   /* Container style for the background image */
   .container {
-      position: relative;
-      text-align: center;
-      color: white;
-      height: 40vh;
-      background: url('/header_img.png') no-repeat center center;
-      background-size: cover;
-      background-position: center;
-      flex-direction: row;
-      transition: transform 1.3s ease, box-shadow 1.3s ease;
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 40vh;
+    background: url('/header_img.png') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    flex-direction: row;
+    transition: transform 1.3s ease, box-shadow 1.3s ease;
+    margin-top: 90px;
   }
