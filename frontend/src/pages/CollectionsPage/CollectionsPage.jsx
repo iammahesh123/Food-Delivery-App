@@ -1,10 +1,12 @@
 import React from 'react'
+import Collections from '../../components/Collections/Collections'
+import "./CollectionsPage.css"
+
 
 const CollectionsPage = () => {
   return (
-    <div>
-        <h1>Collections page implemeent here</h1>
-      
+    <div className="collection-page">
+      <Collections/>      
     </div>
   )
 }
