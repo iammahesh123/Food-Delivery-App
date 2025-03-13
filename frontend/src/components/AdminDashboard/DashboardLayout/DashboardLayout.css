@@ -1,0 +1,68 @@
+.dashboard-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fixed Header */
+.dashboard-header-container {
+  position: fixed;
+  width: 100%; /* Ensure full width */
+  top: 0;
+  left: 0; /* Ensure it starts from the left edge */
+  right: 0; /* Ensure it stretches to the right edge */
+  z-index: 10; /* Higher z-index than sidebar */
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: 4rem; /* Fixed header height */
+}
+
+/* Main content area (sidebar + content) */
+.dashboard-main-content {
+  display: flex;
+  flex: 1;
+  margin-top: 4rem; /* Push content below the header */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 4rem; /* Start below the header */
+  height: calc(100vh - 4rem); /* Full height minus header */
+  overflow-y: auto;
+  transition: width 0.3s; /* Smooth transition for collapsing/expanding */
+}
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  padding: 2rem; /* Adjusted padding */
+  overflow-y: auto;
+  transition: margin-left 0.3s; /* Smooth transition for margin */
+}
+
+/* Collapsed Sidebar */
+.content-area.collapsed {
+  margin-left: 4rem; /* ml-16 */
+}
+
+/* Expanded Sidebar */
+.content-area.expanded {
+  margin-left: 16rem; /* ml-64 */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-area {
+    padding: 1rem; /* Reduced padding for small screens */
+  }
+
+  .content-area.collapsed {
+    margin-left: 0; /* No margin on small screens when collapsed */
+  }
+
+  .content-area.expanded {
+    margin-left: 0; /* No margin on small screens */
+  }
+}
