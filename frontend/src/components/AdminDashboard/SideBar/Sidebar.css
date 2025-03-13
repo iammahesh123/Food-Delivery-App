@@ -1,0 +1,53 @@
+/* Sidebar.css */
+.sidebar {
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: 4rem; /* 16 * 0.25rem = 4rem */
+}
+
+.sidebar.expanded {
+  width: 16rem; /* 64 * 0.25rem = 16rem */
+}
+
+.nav-links {
+  flex: 1;
+  margin-top: 1rem; /* 4 * 0.25rem = 1rem */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem; /* 2 * 0.25rem = 0.5rem, 4 * 0.25rem = 1rem */
+  color: #374151; /* text-gray-700 */
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+.icon {
+  height: 1.25rem; /* 5 * 0.25rem = 1.25rem */
+  width: 1.25rem; /* 5 * 0.25rem = 1.25rem */
+}
+
+.label {
+  margin-left: 0.5rem; /* 2 * 0.25rem = 0.5rem */
+}
+
+.logout-section {
+  margin-top: auto;
+  border-top: 1px solid #e5e7eb; /* border-gray-200 */
+}

@@ -1,0 +1,34 @@
+/* DashboardHeader.css */
+.dashboard-header {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1rem; /* p-4 */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .dashboard-header-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+  }
+  
+  .menu-button {
+    padding: 0.5rem; /* p-2 */
+    border-radius: 9999px; /* rounded-full */
+    background-color: black;
+    transition: background-color 0.2s; /* transition-colors */
+  }
+  
+  .menu-button:hover {
+    background-color: blue; /* hover:bg-gray-100 */
+  }
+  
+  /* Hide menu button on small screens */
+  @media (max-width: 767px) {
+    .dashboard-menu-button {
+      display: none; /* hidden md:inline-flex */
+    }
+  }

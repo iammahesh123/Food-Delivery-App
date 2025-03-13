@@ -1,12 +1,145 @@
-  /* Container style for the background image */
-  .container {
-      position: relative;
-      text-align: center;
-      color: white;
-      height: 40vh;
-      background: url('/header_img.png') no-repeat center center;
-      background-size: cover;
-      background-position: center;
-      flex-direction: row;
-      transition: transform 1.3s ease, box-shadow 1.3s ease;
+/* MenuHeader.css */
+
+.header-container {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 35vh;
+  background: url('/header_img.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  margin-top: 70px;
+  transition: transform 1.3s ease, box-shadow 1.3s ease;
+  z-index: 1; /* Ensure it's above login popup */
+}
+
+.header-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black shadow with opacity */
+  z-index: -1; /* Put this behind header content */
+}
+
+.header-container > div {
+  position: relative;
+  z-index: 2; /* Ensure content is above the shadow */
+  max-width: 900px;
+  text-align: center;
+}
+
+.header-subcontainer h2 {
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.header-subcontainer p {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Wrapper for dropdown and search bar */
+.search-dropdown-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%; /* Full-width container */
+  max-width: 600px; /* Limit max size */
+}
+
+/* Dropdown styles */
+.header-dropdown-container {
+  position: relative; /* Required for icon positioning */
+  z-index: 3; /* Ensure dropdown is above the search bar */
+}
+
+.header-dropdown-container .icon {
+  position: absolute;
+  left: 10px; /* Adjust space from the left edge */
+  top: 50%; /* Vertically center the icon */
+  transform: translateY(-50%);
+  font-size: 1.5rem; /* Adjust icon size */
+  color: #888; /* Icon color */
+}
+
+.header-dropdown-container select {
+  padding: 15px 40px 15px 40px; /* Adjust padding for icon spacing */
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-right: none; /* Seamlessly connect with search bar */
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease;
+}
+
+/* Search bar styles */
+.search-container {
+  position: relative; /* Required for icon positioning */
+  z-index: 3; /* Ensure search bar is above dropdown */
+}
+
+.search-container .icon {
+  position: absolute;
+  left: 10px; /* Adjust space from the left edge */
+  top: 50%; /* Vertically center the icon */
+  transform: translateY(-50%);
+  font-size: 1.5rem; /* Adjust icon size */
+  color: #888; /* Icon color */
+}
+
+.search-container input {
+  padding: 15px 40px 15px 40px; /* Adjust padding for icon spacing */
+  font-size: 1.2rem;
+  width: 500px; /* Full width for search bar */
+  border: 1px solid #ccc;
+  border-left: none; /* Seamlessly connect with dropdown */
+  border-radius: 0 10px 10px 0;
+  outline: none;
+  background-color: whitesmoke;
+  transition: border-color 0.3s ease;
+}
+
+/* Add hover effects */
+.header-dropdown-container select:hover,
+.search-container input:hover {
+  border-color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  h2 {
+      font-size: 2rem;
   }
+
+  p {
+      font-size: 1rem;
+  }
+
+  .search-dropdown-wrapper {
+      flex-direction: column; /* Stack items on small screens */
+  }
+
+  .header-dropdown-container select,
+  .search-container input {
+      width: 100%; /* Full width */
+      border-radius: 10px; /* Rounded corners for standalone */
+      margin-bottom: 10px; /* Add spacing */
+  }
+}
+
+
+
+
+
