@@ -16,6 +16,9 @@ const Collections = () => {
 
   return (
     <>
+      {/* <div className='collections-banner-container'>
+        <img src={assets.christmas_img} alt="Collections Banner" className="collections-banner" />
+      </div> */}
       <div className="collections">
         <h1>Collections</h1>
         <p>

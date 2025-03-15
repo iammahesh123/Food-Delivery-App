@@ -7,7 +7,7 @@ const Footer = () => {
     <div className='footer' id='footer'>
         <div className="footer-content">
             <div className="footer-content-left">
-                <img src={assets.logo} alt='Company Logo'/>
+                <img src={assets.logo2} alt='Company Logo'/>
                 <p>Experience the finest flavors from around 
                     the world with C Tomato, where exceptional 
                     cuisine meets convenience. Our mission is to 

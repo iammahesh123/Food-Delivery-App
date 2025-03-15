@@ -124,7 +124,7 @@ const LoginPopup = ({ setShowLogin }) => {
                             name="email"
                             onChange={(e) => setForgotPasswordEmail(e.target.value)}
                             value={forgotPasswordEmail}
-                            placeholder="Your email"
+                            placeholder="Enter Your email"
                             required
                         />
                     </div>
