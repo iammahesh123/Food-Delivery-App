@@ -58,18 +58,29 @@ const StoreContextProvider = (props) => {
         setLoading(true);
         try {
             const response = await registerUser(userData);
-            console.log("Register Response:", response); // Debugging
-            if (response.token) { // Check for token instead of success
-                setToken(response.token);
-                localStorage.setItem("token", response.token);
-                console.log("Token saved to localStorage:", response.token); // Debugging
-                return { success: true };
-            } else {
-                return { success: false, message: "Registration failed. No token received." };
-            }
+            console.log("Register Response:", response); 
+            // if (response.token) { // Check for token instead of success
+            //     setToken(response.token);
+            //     localStorage.setItem("token", response.token);
+            //     console.log("Token saved to localStorage:", response.token); // Debugging
+            //     return { success: true };
+            // } else {
+            //     return { success: false, message: "Registration failed. No token received." };
+            // }
+            return { success: true, message: response };
         } catch (error) {
             console.error("Registration failed:", error);
-            return { success: false, message: "Registration failed. Please try again." };
+            let errorMessage = "Registration failed. Please try again.";
+        if (error.response) {
+            // Backend returned an error response (e.g., 400, 500)
+            errorMessage = error.response.data || errorMessage;
+        } else if (error.request) {
+            // No response received from the backend (e.g., network error)
+            errorMessage = "Network error. Please check your connection.";
+        }
+
+        // Return failure with the error message
+        return { success: false, message: errorMessage };
         } finally {
             setLoading(false);
         }
