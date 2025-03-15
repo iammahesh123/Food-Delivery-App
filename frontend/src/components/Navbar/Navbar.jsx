@@ -31,7 +31,7 @@ const Navbar = ({ setShowLogin }) => {
     return (
         <div className={`navbar ${scrolling ? 'navbar-hidden' : 'navbar-visible'}`}>
             <Link to="/">
-                <img src={assets.logo} alt="Logo" className="logo" />
+                <img src={assets.logo2} alt="Logo" className="logo" />
             </Link>
 
             <ul className={`navbar-menu ${menuOpen ? 'mobile-visible' : ''}`}>

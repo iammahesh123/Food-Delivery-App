@@ -1,3 +1,19 @@
-.collection-page{
+.collections-banner-container {
+    width: 100%;
+    max-height: 400px;
     margin-top: 100px;
-}
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa; /* Light background to blend with the banner */
+  }
+  
+  .collections-banner {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover; /* Ensures the image covers the container proportionally */
+    border-radius: 10px; /* Soft rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
