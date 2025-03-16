@@ -37,7 +37,6 @@ const LoginPopup = ({ setShowLogin }) => {
         return true;
     };
 
-
     const onLogin = async (event) => {
         event.preventDefault();
         setErrorMessage("");
@@ -114,9 +113,27 @@ const LoginPopup = ({ setShowLogin }) => {
         <div className='login-popup'>
             <form className="login-popup-container" onSubmit={showForgotPassword ? onForgotPassword : onLogin}>
                 <div className="login-popup-title">
-                    <h2>{showForgotPassword ? "Forgot Password" : currentState}</h2>
+                    <h2>{showForgotPassword ? "Forgot Password" : "Welcome"}</h2>
                     <img onClick={() => setShowLogin(false)} src={assets.cross_icon} alt="" className="src" />
                 </div>
+                {!showForgotPassword && (
+                    <div className="login-popup-tabs">
+                        <button
+                            type="button"
+                            className={`tab ${currentState === "Login" ? "active" : ""}`}
+                            onClick={() => setCurrentState("Login")}
+                        >
+                            Login
+                        </button>
+                        <button
+                            type="button"
+                            className={`tab ${currentState === "Register" ? "active" : ""}`}
+                            onClick={() => setCurrentState("Register")}
+                        >
+                            Register
+                        </button>
+                    </div>
+                )}
                 {showForgotPassword ? (
                     <div className="login-popup-inputs">
                         <input
@@ -148,15 +165,6 @@ const LoginPopup = ({ setShowLogin }) => {
                                     placeholder='Your username'
                                     required
                                 />
-                                {/* <select
-                                    name="role"
-                                    onChange={onChangeHandler}
-                                    value={data.role}
-                                    required
-                                >
-                                    <option value="USER">User</option>
-                                    <option value="ADMIN">Admin</option>
-                                </select> */}
                             </>
                         )}
                         <input
@@ -177,31 +185,26 @@ const LoginPopup = ({ setShowLogin }) => {
                         />
                     </div>
                 )}
-                <button type="submit" disabled={isLoading}>
-                {isLoading ? "Loading..." : showForgotPassword ? "Submit" : currentState === "Register" ? "Create account" : "Login"}
-                </button>
-                {!showForgotPassword && (
+                 {!showForgotPassword && (
                     <div className="login-popup-condition">
                         <input type="checkbox" name="" id="" required />
                         <p>By continuing, I agree to the terms of use & privacy policy.</p>
                     </div>
                 )}
+                <button type="submit" disabled={isLoading}>
+                    {isLoading ? "Loading..." : showForgotPassword ? "Submit" : currentState === "Register" ? "Create account" : "Login"}
+                </button>
+               
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
                 {successMessage && <p className="success-message">{successMessage}</p>}
-                {!showForgotPassword && (
-                    currentState === "Login" ? (
-                        <p>
-                            Create a new account? <span onClick={() => setCurrentState("Register")}>Click here</span>
-                            <br />
-                            Forgot your password? <span onClick={() => setShowForgotPassword(true)}>Click here</span>
-                        </p>
-                    ) : (
-                        <p>Already have an account? <span onClick={() => setCurrentState("Login")}>Click here</span></p>
-                    )
+                {!showForgotPassword && currentState === "Login" && (
+                    <p>
+                         <span onClick={() => setShowForgotPassword(true)}>Forgot your password?</span>
+                    </p>
                 )}
                 {showForgotPassword && (
                     <p>
-                        Remember your password? <span onClick={() => setShowForgotPassword(false)}>Click here</span>
+                         <span onClick={() => setShowForgotPassword(false)}>Remember your password?</span>
                     </p>
                 )}
             </form>

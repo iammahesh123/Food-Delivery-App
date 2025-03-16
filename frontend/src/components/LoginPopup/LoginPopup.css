@@ -150,3 +150,31 @@ button.loading {
         opacity: 1;
     }
 }
+
+.login-popup-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.login-popup-tabs .tab {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #808080;
+    transition: background-color 0.3s ease;
+}
+
+.login-popup-tabs .tab.active {
+    background-color: tomato;
+    color: white;
+}
+
+.login-popup-tabs .tab:hover {
+    background-color: #ff7f50;
+    color: white;
+}
