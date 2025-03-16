@@ -450,7 +450,40 @@ export const restraunts = [
         restraunt_image:food_1,
         restraunt_category:["North Indian","South Indian","Beverages","Pizzas"],
         contact_no:"9392496240",
-        
+    }
+]
 
+export const restaurants_data = [
+    {
+        id: "1",
+        name: "KFC",
+        rating: "4.5",
+        address: "1234 Street Name, City Name",
+        description: "Delicious Burger",
+        image: food_1
+    },
+    {
+        id: "2",
+        name: "Pizza Hut",
+        price: "20",
+        address: "1234 Street Name, City Name",
+        description: "Delicious Pizza",
+        image: food_2
+    },
+    {
+        id: "3",
+        name: "KFC",
+        price: "15",
+        address: "1234 Street Name, City Name",
+        description: "Delicious Fried Chicken",
+        image: food_3
+    },
+    {
+        id: "4",
+        name: "Subway",
+        address: "1234 Street Name, City Name",
+        price: "10",
+        description:"testing",
+        image: food_3
     }
 ]
