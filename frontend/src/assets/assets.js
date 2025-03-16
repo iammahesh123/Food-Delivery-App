@@ -75,6 +75,11 @@ import live_events from './live_events.jpg'
 import new_year from './new_year.jpg'
 import menu_header_img from './menu_header_img.png'
 
+import restraunt_1 from './restraunt_1.jpg'
+import restraunt_2 from './restraunt_2.jpg'
+import restraunt_3 from './restraunt_3.jpg'
+import restraunt_4 from './restraunt_4.jpg'
+
 export const assets = {
     logo,
     logo1,
@@ -108,7 +113,11 @@ export const assets = {
     live_events,
     new_year,
     menu_header_img,
-    header_img_2 
+    header_img_2,
+    restraunt_1,
+    restraunt_2,
+    restraunt_3,
+    restraunt_4
 }
 
 export const menu_list = [
@@ -460,7 +469,7 @@ export const restaurants_data = [
         rating: "4.5",
         address: "1234 Street Name, City Name",
         description: "Delicious Burger",
-        image: food_1
+        image: restraunt_1
     },
     {
         id: "2",
@@ -468,7 +477,7 @@ export const restaurants_data = [
         price: "20",
         address: "1234 Street Name, City Name",
         description: "Delicious Pizza",
-        image: food_2
+        image: restraunt_2
     },
     {
         id: "3",
@@ -476,7 +485,7 @@ export const restaurants_data = [
         price: "15",
         address: "1234 Street Name, City Name",
         description: "Delicious Fried Chicken",
-        image: food_3
+        image: restraunt_3
     },
     {
         id: "4",
@@ -484,6 +493,6 @@ export const restaurants_data = [
         address: "1234 Street Name, City Name",
         price: "10",
         description:"testing",
-        image: food_3
+        image: restraunt_4
     }
 ]
