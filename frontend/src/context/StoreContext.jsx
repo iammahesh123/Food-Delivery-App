@@ -1,9 +1,10 @@
 import { createContext, useState } from "react";
-import { food_list } from "../assets/assets";
+import { food_list, restraunts_list, restaurants_data } from "../assets/assets";
 import { registerUser, loginUser } from "../apiService/api";
 
 export const StoreContext = createContext({
     food_list: [],
+    restaurants_data: [],
     cartItems: {},
     setCartItems: () => {},
     addToCart: () => {},
@@ -114,6 +115,7 @@ const StoreContextProvider = (props) => {
 
     const contextValue = {
         food_list,
+        restaurants_data,
         cartItems,
         setCartItems,
         addToCart,

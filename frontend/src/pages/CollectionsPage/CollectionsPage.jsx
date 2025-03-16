@@ -2,12 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Collections from '../../components/Collections/Collections';
 import { assets } from '../../assets/assets';
 import "./CollectionsPage.css";
+import RestaurantsDisplay from './RestaurantsDisplay';
 
 const CollectionsPage = () => {
-  // ✅ Step 1: Initialize state as null
   const [collectionData, setCollectionData] = useState(null);
 
-  // ✅ Step 2: Define mock data (used initially)
   const mockData = {
     bannerImage: assets.christmas_img,
     title: "Potato Collections",
@@ -15,14 +14,59 @@ const CollectionsPage = () => {
     description: `Explore our diverse menu, crafted to delight every palate. 
     Featuring a delectable array of dishes, our offerings are thoughtfully prepared 
     with the finest ingredients to ensure a memorable dining experience.`,
-    tags: "9 "
+    tags: "9 ",
+    "restaurants": [
+      {
+        "id": "1",
+        "name": "KFC",
+        "rating": "4.5",
+        "address": "1234 Street Name, City Name",
+        "description": "Delicious Burger",
+        "image": assets.burger_img
+      },
+      {
+        "id": "2",
+        "name": "Pizza Hut",
+        "price": "20",
+        "description": "Delicious Pizza",
+        "image": assets.pizza_img
+      },
+      {
+        "id": "3",
+        "name": "KFC",
+        "price": "15",
+        "description": "Delicious Fried Chicken",
+        "image": assets.chicken_img
+      },
+      {
+        "id": "4",
+        "name": "Subway",
+        "price": "10",
+        "description": "Delicious Sub",
+        "image": assets.sub_img
+      },
+      {
+        "id": "5",
+        "name": "Starbucks",
+        "price": "5",
+        "description": "Delicious Coffee",
+        "image": assets.coffee_img
+      },
+      {
+        "id": "6",
+        "name": "McDonald's",
+        "price": "10",
+        "description": "Delicious Burger",
+        "image": assets.mcdonalds_img
+      }
+    ]
   };
 
   useEffect(() => {
-    // ✅ Step 3: Fetch dynamic data from backend
+    // Fetch dynamic data from backend
     const fetchData = async () => {
       try {
-        const response = await fetch('https://your-api.com/get-banner'); // Replace with actual API
+        const response = await fetch('https://your-api.com/get-banner'); 
         const data = await response.json();
 
         if (data) {
@@ -42,7 +86,7 @@ const CollectionsPage = () => {
   return (
     <>
       <div className='collections-banner-container'>
-        {/* ✅ Step 4: Use optional chaining (?.) to avoid errors */}
+        {/* Use optional chaining (?.) to avoid errors */}
         <img 
           src={collectionData?.bannerImage || mockData.bannerImage} 
           alt="Collections Banner" 
@@ -56,7 +100,8 @@ const CollectionsPage = () => {
         </div>
       </div>
       <div className="collection-page">
-        <Collections />      
+        <RestaurantsDisplay />  
+        <Collections />    
       </div>
     </>
   );
