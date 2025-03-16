@@ -1,13 +1,12 @@
 import React from 'react'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
-
-import MenuHeader from '../../components/MenuHeader/MenuHeader'
+import './MenuPage.css'
 
 const MenuPage = () => {
   return (
-    <div>
-      <MenuHeader />
+    <div className='menu-page'>
+      {/* <MenuHeader /> */}
       <ExploreMenu />
       <FoodDisplay />
     </div>

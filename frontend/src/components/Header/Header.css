@@ -16,7 +16,7 @@
 .header-contents {
   max-width: 800px;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background for better readability */
+  background: rgba(0, 0, 0, 0.3); 
   border-radius: 15px;
   animation: fadeIn 2s ease-in-out;
 }

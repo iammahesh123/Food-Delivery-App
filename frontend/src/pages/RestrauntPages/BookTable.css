@@ -1,0 +1,106 @@
+/* BookTable.css */
+.book-table {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-table h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.form-group input[type='date'],
+.form-group input[type='number'] {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.meal-type-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.meal-type-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.meal-type-buttons button.active {
+  background-color: #ff6347;
+  color: white;
+}
+
+.meal-type-buttons button:hover {
+  background-color: #ff4500;
+  color: white;
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.time-slots button {
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #c78888;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.time-slots button.active {
+  background-color: #ff6347;
+  color: white;
+}
+
+.time-slots button:hover {
+  background-color: #ff4500;
+  color: white;
+}
+
+.book-now-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff6347;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.book-now-btn:hover {
+  background-color: #ff4500;
+}
