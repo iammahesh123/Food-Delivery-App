@@ -21,43 +21,42 @@ const CollectionsPage = () => {
         "name": "KFC",
         "rating": "4.5",
         "address": "1234 Street Name, City Name",
-        "description": "Delicious Burger",
         "image": assets.burger_img
       },
       {
         "id": "2",
-        "name": "Pizza Hut",
-        "price": "20",
-        "description": "Delicious Pizza",
-        "image": assets.pizza_img
+        "name": "McDonald's",
+        "rating": "4.0",
+        "address": "1234 Street Name, City Name",
+        "image": assets.burger_img
       },
       {
         "id": "3",
-        "name": "KFC",
-        "price": "15",
-        "description": "Delicious Fried Chicken",
-        "image": assets.chicken_img
+        "name": "Subway",
+        "rating": "4.0",
+        "address": "1234 Street Name, City Name",
+        "image": assets.burger_img
       },
       {
         "id": "4",
-        "name": "Subway",
-        "price": "10",
-        "description": "Delicious Sub",
-        "image": assets.sub_img
+        "name": "Pizza Hut",
+        "rating": "4.0",
+        "address": "1234 Street Name, City Name",
+        "image": assets.burger_img
       },
       {
         "id": "5",
-        "name": "Starbucks",
-        "price": "5",
-        "description": "Delicious Coffee",
-        "image": assets.coffee_img
+        "name": "Domino's",
+        "rating": "4.0",
+        "address": "1234 Street Name, City Name",
+        "image": assets.burger_img
       },
       {
         "id": "6",
-        "name": "McDonald's",
-        "price": "10",
-        "description": "Delicious Burger",
-        "image": assets.mcdonalds_img
+        "name": "Burger King",
+        "rating": "4.0",
+        "address": "1234 Street Name, City Name",
+        "image": assets.burger_img
       }
     ]
   };

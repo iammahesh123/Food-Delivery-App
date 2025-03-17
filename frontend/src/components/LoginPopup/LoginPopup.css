@@ -36,6 +36,7 @@
 .login-popup-inputs {
     display: flex;
     flex-direction: column;
+    position: relative;
     gap: 20px;
 }
 
@@ -44,6 +45,24 @@
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
+    width: 100%;
+    padding-right: 40px;
+}
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding-right: 40px; /* Add padding to prevent text overlap with the icon */
 }
 
 .login-popup-container button {
