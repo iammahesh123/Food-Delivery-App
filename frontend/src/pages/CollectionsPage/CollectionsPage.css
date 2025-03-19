@@ -13,11 +13,10 @@
   width: 100%;
   max-height: 400px;
   object-fit: cover; /* Ensure proportional image cover */
-  border-radius: 10px; /* Soft rounded corners */
+  border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* ✅ Fix: Positioning content on the banner */
 .collection-contents {
   position: absolute; /* Place content over the banner */
   top: 70%;

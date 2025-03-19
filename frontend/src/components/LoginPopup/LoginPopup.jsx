@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import './LoginPopup.css';
 import { assets } from '../../assets/assets';
 import { StoreContext } from '../../context/StoreContext';
+import { Eye, EyeOff } from 'lucide-react';
 
 const LoginPopup = ({ setShowLogin }) => {
     const { handleRegister, handleLogin, handleForgotPassword, setToken } = useContext(StoreContext);
@@ -12,6 +13,7 @@ const LoginPopup = ({ setShowLogin }) => {
     const [showForgotPassword, setShowForgotPassword] = useState(false);
     const [forgotPasswordEmail, setForgotPasswordEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
     const onChangeHandler = (event) => {
         const { name, value } = event.target;
@@ -175,14 +177,22 @@ const LoginPopup = ({ setShowLogin }) => {
                             placeholder="Your email"
                             required
                         />
-                        <input
-                            type="password"
-                            name="password"
-                            onChange={onChangeHandler}
-                            value={data.password}
-                            placeholder='Enter Password'
-                            required
-                        />
+                        <div className="password-input-container">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                onChange={onChangeHandler}
+                                value={data.password}
+                                placeholder='Enter Password'
+                                required
+                            />
+                            <span
+                                className="password-toggle-icon"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
+                            </span>
+                        </div>
                     </div>
                 )}
                  {!showForgotPassword && (
