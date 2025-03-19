@@ -3,6 +3,7 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
+import { Bell } from 'lucide-react';
 
 const Navbar = ({ setShowLogin }) => {
     const [menu, setMenu] = useState('home');
@@ -58,6 +59,12 @@ const Navbar = ({ setShowLogin }) => {
                         <img src={assets.basket_icon} alt="Cart" />
                     </Link>
                     {cartItemCount > 0 && <div className="cart-count">{cartItemCount}</div>}
+                </div>
+
+                {/* Notification Icon with Lucide */}
+                <div className="navbar-notification-icon">
+                    <Bell size={30} /> {/* Lucide Bell icon */}
+                    <div className="notification-count">3</div> {/* Replace with dynamic count if needed */}
                 </div>
 
                 {!token ? (
