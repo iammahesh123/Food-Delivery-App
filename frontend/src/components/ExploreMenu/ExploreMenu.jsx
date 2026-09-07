@@ -1,28 +1,70 @@
-import React from 'react'
-import './ExploreMenu.css'
-import { menu_list } from '../../assets/assets'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { menu_list } from '../../assets/assets';
+import { UtensilsCrossed, ArrowRight, Sparkles } from 'lucide-react';
+import './ExploreMenu.css';
 
-const ExploreMenu = ({category,setCategory}) => {
+const ExploreMenu = ({ category, setCategory }) => {
   return (
-    <div className='explore-menu' id='explore-menu'>
-        <h1>Explore our menu</h1>
-        <p className='explore-menu-text'>Explore our menu and indulge in a variety of delicious dishes crafted to delight every palate. 
-        Simply select your favorites and let us know about any special requests or dietary preferences
-        - we’re here to ensure your meal is perfect. Enjoy every bite!</p>
-        <div className="explore-menu-list">
-            {menu_list.map((item,index) =>
-            { return (
-                <div onClick={() => setCategory(prev => prev === item.menu_name?"All":item.menu_name)} key={index} className="explore-menu-list-items">
-                    <img className={category === item.menu_name?"active":""} src={ item.menu_image} alt=''/>
-                    <p>{item.menu_name}</p>
-                </div>
-            )
-            })}
+    <div className="explore-menu" id="explore-menu">
+      <div className="explore-menu-header-row">
+        <div>
+          <div className="explore-menu-tag">
+            <Sparkles size={15} className="text-orange" />
+            <span>Curated Cuisines</span>
+          </div>
+          <h2 className="explore-menu-title">What are you craving today?</h2>
+          <p className="explore-menu-sub">
+            Browse our hand-crafted menu categories. Select any cuisine to filter the delicious dishes below.
+          </p>
         </div>
-        <hr />
-      
-    </div>
-  )
-}
+        <Link to="/explore-menu" className="explore-view-full-btn">
+          <span>Full Menu & Filters</span>
+          <ArrowRight size={16} />
+        </Link>
+      </div>
 
-export default ExploreMenu
+      <div className="explore-categories-rail">
+        {/* 'All' Option Card */}
+        <button
+          type="button"
+          onClick={() => setCategory('All')}
+          className={`category-rail-card ${category === 'All' ? 'active' : ''}`}
+          aria-label="Show All Cuisines"
+        >
+          <div className="category-avatar-wrapper all-avatar">
+            <UtensilsCrossed size={28} className="all-icon" />
+          </div>
+          <span className="category-card-name">All Cuisines</span>
+          <span className="category-count-badge">32 Dishes</span>
+        </button>
+
+        {/* Dynamic Category Cards */}
+        {menu_list.map((item, index) => {
+          const isActive = category === item.menu_name;
+          return (
+            <button
+              key={index}
+              type="button"
+              onClick={() => setCategory(prev => prev === item.menu_name ? 'All' : item.menu_name)}
+              className={`category-rail-card ${isActive ? 'active' : ''}`}
+              aria-label={`Filter by ${item.menu_name}`}
+            >
+              <div className="category-avatar-wrapper">
+                <img
+                  src={item.menu_image}
+                  alt={item.menu_name}
+                  className="category-avatar-img"
+                />
+              </div>
+              <span className="category-card-name">{item.menu_name}</span>
+              <span className="category-count-badge">4 Curated</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default ExploreMenu;

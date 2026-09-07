@@ -1,93 +1,217 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import './Navbar.css';
 import { assets } from '../../assets/assets';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
-import { Bell } from 'lucide-react';
+import { ShoppingBag, Bell, User, LayoutDashboard, LogOut, Menu as MenuIcon, X } from 'lucide-react';
 
 const Navbar = ({ setShowLogin }) => {
-    const [menu, setMenu] = useState('home');
-    const [menuOpen, setMenuOpen] = useState(false);
-    const { cartItems, token, setToken, handleLogout } = useContext(StoreContext);
-    const [scrolling, setScrolling] = useState(false);
-    const [lastScrollY, setLastScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { cartItems, token, handleLogout, userRole, switchRole, userProfile } = useContext(StoreContext);
+  const navigate = useNavigate();
 
-    const cartItemCount = Object.values(cartItems).reduce((total, count) => total + count, 0);
+  const cartItemCount = Object.values(cartItems).reduce((total, count) => total + count, 0);
 
-    const handleScroll = () => {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > lastScrollY) {
-            setScrolling(true);
-        } else {
-            setScrolling(false);
-        }
-        setLastScrollY(currentScrollY);
-    };
+  return (
+    <header className="navbar-wrapper">
+      <div className="navbar-container">
+        {/* Logo */}
+        <Link to="/" className="navbar-logo-link">
+          <img src={assets.logo2} alt="Tomato Logo" className="navbar-logo" />
+        </Link>
 
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [lastScrollY]);
+        {/* Desktop Navigation Links */}
+        <nav className="navbar-links" aria-label="Main Navigation">
+          <NavLink
+            to="/"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/explore-menu"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+          >
+            Menu
+          </NavLink>
+          <NavLink
+            to="/restaurants"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+          >
+            Restaurants
+          </NavLink>
+          <NavLink
+            to="/collections"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+          >
+            Collections
+          </NavLink>
+          <NavLink
+            to="/featureservices"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+          >
+            Services
+          </NavLink>
+          <NavLink
+            to="/contact-us"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+          >
+            Contact
+          </NavLink>
+        </nav>
 
-    return (
-        <div className={`navbar ${scrolling ? 'navbar-hidden' : 'navbar-visible'}`}>
-            <Link to="/">
-                <img src={assets.logo2} alt="Logo" className="logo" />
-            </Link>
+        {/* Right Section Actions */}
+        <div className="navbar-actions">
+          {/* Operations Hub Quick-Switch / Link */}
+          <Link to="/dashboard" className="portal-switch-pill" title="Merchant & Operations Console">
+            <LayoutDashboard size={16} />
+            <span className="portal-label">Merchant Hub</span>
+          </Link>
 
-            <ul className={`navbar-menu ${menuOpen ? 'mobile-visible' : ''}`}>
-                <Link to="/" onClick={() => setMenu('home')} className={menu === 'home' ? 'active' : ''}>
-                    Home
-                </Link>
-                <Link to="/explore-menu" onClick={() => setMenu('menu')} className={menu === 'menu' ? 'active' : ''}>
-                    Menu
-                </Link>
-                <Link to="/restaurants" onClick={() => setMenu('restaurants')} className={menu === 'restaurants' ? 'active' : ''}>
-                    Restaurants
-                </Link>
-                <Link to="/collections" onClick={() => setMenu('collections')} className={menu === 'collections' ? 'active' : ''}>
-                    Collections
-                </Link>
-                <Link to="/contact-us" onClick={() => setMenu('contact us')} className={menu === 'contact us' ? 'active' : ''}>
-                    Contact Us
-                </Link>
-            </ul>
+          {/* Cart Icon */}
+          <Link to="/cart" className="action-icon-btn cart-btn" aria-label={`View Cart with ${cartItemCount} items`}>
+            <ShoppingBag size={22} />
+            {cartItemCount > 0 && <span className="cart-badge">{cartItemCount}</span>}
+          </Link>
 
-            <div className="navbar-right">
-                <div className="navbar-search-icon">
-                    <Link to="/cart">
-                        <img src={assets.basket_icon} alt="Cart" />
-                    </Link>
-                    {cartItemCount > 0 && <div className="cart-count">{cartItemCount}</div>}
+          {/* Notifications */}
+          <button
+            type="button"
+            className="action-icon-btn"
+            onClick={() => navigate('/my-orders')}
+            aria-label="Order notifications"
+          >
+            <Bell size={22} />
+            <span className="notification-dot" />
+          </button>
+
+          {/* User Profile / Authentication */}
+          {!token ? (
+            <button
+              type="button"
+              className="signin-btn"
+              onClick={() => setShowLogin(true)}
+            >
+              Sign In
+            </button>
+          ) : (
+            <div className="user-profile-menu">
+              <button
+                type="button"
+                className="profile-avatar-btn"
+                aria-label="Account options"
+                onClick={() => navigate('/my-orders')}
+              >
+                <div className="avatar-circle">
+                  <User size={18} />
                 </div>
+                <span className="user-name-label">{userProfile.name.split(' ')[0]}</span>
+              </button>
 
-                {/* Notification Icon with Lucide */}
-                <div className="navbar-notification-icon">
-                    <Bell size={30} /> {/* Lucide Bell icon */}
-                    <div className="notification-count">3</div> {/* Replace with dynamic count if needed */}
+              <div className="profile-dropdown-content">
+                <div className="dropdown-user-header">
+                  <strong>{userProfile.name}</strong>
+                  <span className="role-tag">Role: {userRole}</span>
                 </div>
-
-                {!token ? (
-                    <button onClick={() => setShowLogin(true)}>Sign In</button>
-                ) : (
-                    <div className="navbar-profile">
-                        <img src={assets.profile_icon} alt="Profile" />
-                        <ul className="nav-profile-dropdown">
-                            <li>
-                                <img src={assets.bag_icon} alt="Orders" />
-                                <p>Orders</p>
-                            </li>
-                            <hr />
-                            <li onClick={handleLogout}>
-                                <img src={assets.logout_icon} alt="Logout" />
-                                <p>Logout</p>
-                            </li>
-                        </ul>
-                    </div>
-                )}
+                <hr className="dropdown-divider" />
+                <Link to="/my-orders" className="dropdown-item">
+                  <ShoppingBag size={16} />
+                  <span>My Orders</span>
+                </Link>
+                <Link to="/dashboard" className="dropdown-item">
+                  <LayoutDashboard size={16} />
+                  <span>Merchant Portal</span>
+                </Link>
+                <hr className="dropdown-divider" />
+                <button
+                  type="button"
+                  className="dropdown-item logout"
+                  onClick={handleLogout}
+                >
+                  <LogOut size={16} />
+                  <span>Sign Out</span>
+                </button>
+              </div>
             </div>
+          )}
+
+          {/* Mobile Hamburger Button */}
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />}
+          </button>
         </div>
-    );
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="mobile-drawer fade-in">
+          <NavLink
+            to="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+            end
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/explore-menu"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Menu Catalog
+          </NavLink>
+          <NavLink
+            to="/restaurants"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Restaurants Directory
+          </NavLink>
+          <NavLink
+            to="/collections"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Gourmet Collections
+          </NavLink>
+          <NavLink
+            to="/featureservices"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Featured Services
+          </NavLink>
+          <NavLink
+            to="/my-orders"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            My Orders
+          </NavLink>
+          <NavLink
+            to="/dashboard"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Merchant Operations Portal
+          </NavLink>
+          <NavLink
+            to="/contact-us"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Contact & Support
+          </NavLink>
+        </div>
+      )}
+    </header>
+  );
 };
 
 export default Navbar;

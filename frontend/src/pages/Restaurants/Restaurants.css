@@ -1,3 +1,220 @@
-.restaurants-container{
-    margin-top: 100px;
+.restaurants-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-12);
+}
+
+.restaurants-page-header {
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-subtle) 100%);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.page-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.restaurants-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 280px;
+  max-width: 440px;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 12px;
+  color: var(--text-muted);
+}
+
+.search-box .search-input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  font-size: 0.875rem;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.search-box .search-input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.filter-chips {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.chip-btn {
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  border-color: var(--color-neutral-400);
+  background-color: var(--color-neutral-50);
+}
+
+.chip-btn.active {
+  background-color: var(--color-primary-500);
+  color: var(--text-inverse);
+  border-color: var(--color-primary-500);
+}
+
+/* Grid */
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+}
+
+.restaurant-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-neutral-300);
+}
+
+.card-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background-color: var(--color-neutral-100);
+}
+
+.card-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .card-cover-img {
+  transform: scale(1.04);
+}
+
+.card-badge-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}
+
+.rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: #15803d;
+  color: white;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-xs);
+}
+
+.card-details {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.details-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.res-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.res-prep-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+}
+
+.res-cuisine {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.details-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-neutral-100);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.res-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pin-icon {
+  color: var(--color-primary-500);
+}
+
+.res-avg-cost {
+  font-weight: 600;
+  color: var(--text-secondary);
 }

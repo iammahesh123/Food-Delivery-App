@@ -1,50 +1,260 @@
-.app-download {
-    margin: auto;
-    margin-top: 100px;
-    font-size: clamp(18px, 3vw, 32px);
-    text-align: center;
-    font-weight: 500;
-    box-sizing: border-box;
+/* ==========================================================================
+   App Download Section Styles
+   High-Converting Split Banner with Store Badges & QR Card
+   ========================================================================== */
+
+.app-download-section {
+  width: 100%;
+}
+
+.app-download-card {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 40px;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%);
+  border-radius: 28px;
+  padding: 56px 48px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.25);
+}
+
+/* Background Glow Element */
+.app-download-card::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(234, 88, 12, 0.25) 0%, rgba(234, 88, 12, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Left Content Column */
+.app-download-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  z-index: 1;
+}
+
+.app-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(234, 88, 12, 0.2);
+  border: 1px solid rgba(234, 88, 12, 0.35);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fb923c;
+  margin-bottom: 16px;
+}
+
+.app-download-title {
+  font-size: clamp(26px, 2.8vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.app-download-desc {
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: #94a3b8;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 24px;
+}
+
+/* Perks List */
+.app-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.perk-icon {
+  color: #34d399;
+  flex-shrink: 0;
+}
+
+/* Store Platforms & Ratings */
+.app-download-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .app-download-platforms {
-    display: flex;
-    justify-content: center;
-    gap: clamp(20px, 5vw, 40px);
-    margin-top: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.app-download-platforms img {
-    width: 150px;
-    max-width: 150px;
-    transition: transform 0.5s;
-    cursor: pointer;
+.store-badge-img {
+  height: 48px;
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  border-radius: 10px;
 }
 
-.app-download-platforms img:hover {
-    transform: scale(1.05);
+.store-badge-img:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
 }
 
-.app-download-platforms img:focus {
-    outline: 2px solid #007bff;
-    transform: scale(1.05);
+.app-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  color: #cbd5e1;
+  align-self: flex-start;
 }
 
-@media screen and (max-width: 600px) {
-    .app-download {
-        font-size: 18px;
-        margin-top: 50px;
-    }
+.stars-cluster {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
 
-    .app-download-platforms {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
+.star-filled {
+  color: #fbbf24;
+  fill: #fbbf24;
+}
 
-    .app-download-platforms img {
-        width: 120px;
-        max-width: 120px;
-    }
+.rating-num {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.rating-divider {
+  color: #64748b;
+}
+
+/* Right Visual QR Box Card */
+.app-download-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.qr-box-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.3);
+  max-width: 280px;
+  width: 100%;
+}
+
+.qr-icon-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.qr-icon {
+  color: #ea580c;
+}
+
+.qr-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.qr-text strong {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.qr-text span {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.qr-illustration {
+  width: 160px;
+  height: 160px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  margin-bottom: 18px;
+}
+
+.simulated-qr {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #0f172a;
+}
+
+.top-left { top: 4px; left: 4px; border-right: none; border-bottom: none; }
+.top-right { top: 4px; right: 4px; border-left: none; border-bottom: none; }
+.bottom-left { bottom: 4px; left: 4px; border-right: none; border-top: none; }
+
+.qr-footer-pill {
+  font-size: 11px;
+  font-weight: 500;
+  color: #94a3b8;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .app-download-card {
+    grid-template-columns: 1fr;
+    padding: 40px 28px;
+  }
+
+  .app-download-visual {
+    margin-top: 20px;
+  }
 }

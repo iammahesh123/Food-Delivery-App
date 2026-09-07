@@ -1,34 +1,166 @@
-/* DashboardHeader.css */
 .dashboard-header {
-    background-color: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    padding: 1rem; /* p-4 */
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-around;
+  height: var(--header-height);
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--color-neutral-200);
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.header-sidebar-toggle {
+  background: transparent;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.header-sidebar-toggle:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+  border-color: var(--color-neutral-400);
+}
+
+.header-title-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header-title {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.store-sublabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Status Toggle */
+.status-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-toggle-pill.online {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.status-toggle-pill.offline {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border-color: #fecaca;
+}
+
+.status-indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}
+
+.header-orders-alert {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+}
+
+.alert-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--color-primary-500);
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+}
+
+.merchant-profile-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--bg-subtle);
+  padding: 4px 10px 4px 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.merchant-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.merchant-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.merchant-name {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.merchant-role {
+  font-size: 0.625rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .store-status-toggle {
+    display: none;
   }
-  
-  .dashboard-header-title {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    color: #1f2937; /* text-gray-800 */
-  }
-  
-  .menu-button {
-    padding: 0.5rem; /* p-2 */
-    border-radius: 9999px; /* rounded-full */
-    background-color: black;
-    transition: background-color 0.2s; /* transition-colors */
-  }
-  
-  .menu-button:hover {
-    background-color: blue; /* hover:bg-gray-100 */
-  }
-  
-  /* Hide menu button on small screens */
-  @media (max-width: 767px) {
-    .dashboard-menu-button {
-      display: none; /* hidden md:inline-flex */
-    }
-  }
+}

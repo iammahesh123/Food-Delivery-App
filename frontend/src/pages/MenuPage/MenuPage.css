@@ -1,4 +1,168 @@
 .menu-page {
-    padding-top: 100px; /* Adjust the value based on the height of your navbar */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-12);
+}
+
+.menu-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-subtle) 100%);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-page-title {
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.menu-page-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.menu-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.menu-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 260px;
+}
+
+.menu-search-wrapper .search-icon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+}
+
+.menu-search-input {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  font-size: 0.9375rem;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.menu-search-input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.menu-filters-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* Dietary Segmented Control */
+.dietary-segmented-control {
+  display: flex;
+  background-color: var(--color-neutral-100);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.dietary-btn {
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dietary-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--color-primary-600);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Sort Dropdown */
+.sort-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sort-dropdown-wrapper .sort-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.sort-select {
+  padding: 8px 12px 8px 30px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+}
+
+.food-display-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.results-badge {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-500);
+  background-color: var(--color-neutral-100);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.empty-catalog-state {
+  text-align: center;
+  padding: var(--space-12) var(--space-4);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-neutral-300);
+}
+
+.empty-catalog-state h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.empty-catalog-state p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,82 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  line-height: 1;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+/* Sizes */
+.badge-sm {
+  padding: 3px 8px;
+  font-size: 0.6875rem;
+}
+
+.badge-md {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+.badge-lg {
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+}
+
+/* Semantic Variants */
+.badge-neutral {
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-700);
+  border-color: var(--color-neutral-200);
+}
+
+.badge-primary {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+  border-color: var(--color-primary-200);
+}
+
+.badge-pending {
+  background-color: var(--status-pending-bg);
+  color: var(--status-pending-text);
+  border-color: var(--status-pending-border);
+}
+
+.badge-confirmed {
+  background-color: var(--status-confirmed-bg);
+  color: var(--status-confirmed-text);
+  border-color: var(--status-confirmed-border);
+}
+
+.badge-preparing {
+  background-color: var(--status-preparing-bg);
+  color: var(--status-preparing-text);
+  border-color: var(--status-preparing-border);
+}
+
+.badge-out_for_delivery {
+  background-color: var(--status-delivery-bg);
+  color: var(--status-delivery-text);
+  border-color: var(--status-delivery-border);
+}
+
+.badge-delivered {
+  background-color: var(--status-delivered-bg);
+  color: var(--status-delivered-text);
+  border-color: var(--status-delivered-border);
+}
+
+.badge-canceled {
+  background-color: var(--status-canceled-bg);
+  color: var(--status-canceled-text);
+  border-color: var(--status-canceled-border);
+}
+
+.badge-success {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border-color: #bbf7d0;
+}

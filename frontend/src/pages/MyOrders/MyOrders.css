@@ -1,0 +1,153 @@
+.my-orders-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding-bottom: var(--space-12);
+}
+
+.my-orders-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.my-orders-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.my-orders-subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+/* Tab Controls */
+.order-tabs-control {
+  display: flex;
+  background-color: var(--color-neutral-100);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+  gap: 2px;
+}
+
+.order-tabs-control .tab-btn {
+  padding: 6px 14px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.order-tabs-control .tab-btn.active {
+  background-color: var(--bg-surface);
+  color: var(--color-primary-600);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Empty State */
+.orders-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-16) var(--space-4);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px dashed var(--color-neutral-300);
+  gap: var(--space-3);
+}
+
+.empty-icon {
+  color: var(--color-neutral-400);
+}
+
+/* Orders Cards List */
+.orders-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.order-history-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-history-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-neutral-300);
+}
+
+.card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.restaurant-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.order-date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.card-items-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+}
+
+.items-names {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  max-width: 75%;
+}
+
+.order-total-price {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.card-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+}
+
+.order-id-tag {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.order-actions {
+  display: flex;
+  gap: var(--space-2);
+}

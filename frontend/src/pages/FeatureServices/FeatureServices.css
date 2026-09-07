@@ -1,0 +1,148 @@
+.feature-services-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  padding-bottom: var(--space-12);
+}
+
+.services-hero {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.services-pill {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary-600);
+  background-color: var(--color-primary-50);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+.services-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.services-subtitle {
+  font-size: 1.0625rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-6);
+}
+
+.service-feature-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-200);
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-600);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-neutral-600);
+  background-color: var(--bg-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.service-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.service-headline {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary-600);
+}
+
+.service-body {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.service-card-footer {
+  margin-top: auto;
+}
+
+/* Trust Banner */
+.services-trust-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-6);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.trust-icon {
+  color: var(--color-primary-500);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.trust-item h4 {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.trust-item p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}

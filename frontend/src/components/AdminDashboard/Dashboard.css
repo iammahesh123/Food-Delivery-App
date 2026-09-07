@@ -1,0 +1,257 @@
+.dashboard-overview-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dashboard-welcome-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-subtle) 100%);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.welcome-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.welcome-subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.welcome-actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* KPI Cards */
+.kpi-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.kpi-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kpi-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.kpi-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-icon-wrap.emerald {
+  background-color: #dcfce7;
+  color: #16a34a;
+}
+
+.kpi-icon-wrap.primary {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-600);
+}
+
+.kpi-icon-wrap.amber {
+  background-color: #fef3c7;
+  color: #d97706;
+}
+
+.kpi-icon-wrap.indigo {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+}
+
+.kpi-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.kpi-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* Content Grid */
+.dashboard-grid-content {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.dashboard-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-neutral-200);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.card-top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-neutral-100);
+  padding-bottom: var(--space-3);
+}
+
+.card-top-header h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Recent Orders List */
+.recent-orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.recent-order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.order-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.order-id-badge {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary-600);
+  background-color: var(--bg-surface);
+  padding: 4px 8px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.order-meta {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8125rem;
+}
+
+.order-meta strong {
+  color: var(--text-primary);
+}
+
+.order-meta span {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.order-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.order-amount {
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+/* Station Meters */
+.station-meters-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.station-meter-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.meter-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.meter-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-neutral-200);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+}
+
+.merchant-contact-box {
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  font-size: 0.8125rem;
+}
+
+.merchant-contact-box h4 {
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.merchant-contact-box p {
+  color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+  .dashboard-grid-content {
+    grid-template-columns: 1fr;
+  }
+}

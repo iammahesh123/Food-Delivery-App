@@ -1,0 +1,97 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.required-star {
+  color: var(--color-primary-500);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-control {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.input-control:hover:not(:disabled) {
+  border-color: var(--color-neutral-400);
+}
+
+.input-control:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.input-control:disabled {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  cursor: not-allowed;
+}
+
+.with-left-icon {
+  padding-left: 38px;
+}
+
+.with-right-icon {
+  padding-right: 38px;
+}
+
+.input-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input-icon.left {
+  left: 12px;
+}
+
+.input-icon.right {
+  right: 12px;
+}
+
+/* Error State */
+.has-error .input-control {
+  border-color: #ef4444;
+}
+
+.has-error .input-control:focus {
+  box-shadow: 0 0 0 3px #fee2e2;
+}
+
+.field-error-message {
+  font-size: 0.8125rem;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+.field-helper-text {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}

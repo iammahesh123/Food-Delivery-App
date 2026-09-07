@@ -1,0 +1,98 @@
+/* Design Tokens & Theme Variables */
+:root {
+  /* Brand Palette - Modern Vibrant Culinary Tones */
+  --color-primary-50: #fff1f2;
+  --color-primary-100: #ffe4e6;
+  --color-primary-200: #fecdd3;
+  --color-primary-300: #fda4af;
+  --color-primary-400: #fb7185;
+  --color-primary-500: #e11d48; /* Crimson / Rose Brand Core */
+  --color-primary-600: #be123c;
+  --color-primary-700: #9f1239;
+  --color-primary-800: #881337;
+
+  /* Accent & Secondary */
+  --color-accent-amber: #f59e0b;
+  --color-accent-emerald: #10b981;
+  --color-accent-indigo: #6366f1;
+
+  /* Neutral Slate Palette */
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+
+  /* Surface & Background */
+  --bg-app: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --bg-muted: #e2e8f0;
+
+  /* Text Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Semantic Status Tokens */
+  --status-pending-bg: #fffbeb;
+  --status-pending-text: #b45309;
+  --status-pending-border: #fde68a;
+
+  --status-confirmed-bg: #eff6ff;
+  --status-confirmed-text: #1d4ed8;
+  --status-confirmed-border: #bfdbfe;
+
+  --status-preparing-bg: #fdf4ff;
+  --status-preparing-text: #86198f;
+  --status-preparing-border: #f5d0fe;
+
+  --status-delivery-bg: #f0fdfa;
+  --status-delivery-text: #0f766e;
+  --status-delivery-border: #99f6e4;
+
+  --status-delivered-bg: #f0fdf4;
+  --status-delivered-text: #15803d;
+  --status-delivered-border: #bbf7d0;
+
+  --status-canceled-bg: #fef2f2;
+  --status-canceled-text: #b91c1c;
+  --status-canceled-border: #fecaca;
+
+  /* Spacing Scale (4px Base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Layout Constants */
+  --header-height: 72px;
+  --container-max-width: 1280px;
+}

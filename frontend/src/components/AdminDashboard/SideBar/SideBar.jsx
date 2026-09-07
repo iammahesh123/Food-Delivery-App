@@ -1,79 +1,96 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import {
-  Home,
-  FileText,
-  Settings,
-  BarChart,
-  Users,
-  Briefcase,
-  PlusSquare,
+  LayoutDashboard,
+  ChefHat,
+  UtensilsCrossed,
+  ShoppingBag,
+  Store,
   LogOut,
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
 } from 'lucide-react';
-import './Sidebar.css'; // Import the CSS file
+import { StoreContext } from '../../../context/StoreContext';
+import './Sidebar.css';
 
-const Sidebar = ({ isCollapsed }) => {
+const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
+  const { userRole, handleLogout } = useContext(StoreContext);
+  const navigate = useNavigate();
+
   return (
-    <div className={`sidebar ${isCollapsed ? 'collapsed' : 'expanded'}`}>
-      {/* Navigation Links */}
-      <nav className="nav-links">
-        {/* Overview Link */}
-        <Link to="/dashboard/" className="nav-link">
-          <Home className="icon" />
-          {!isCollapsed && <span className="label">Overview</span>}
-        </Link>
+    <aside className={`dashboard-sidebar ${isCollapsed ? 'collapsed' : 'expanded'}`}>
+      <div className="sidebar-brand-row">
+        {!isCollapsed && (
+          <div className="brand-info">
+            <span className="brand-title">Merchant Hub</span>
+            <span className="brand-role-chip">{userRole}</span>
+          </div>
+        )}
+        <button
+          type="button"
+          onClick={onToggleCollapse}
+          className="collapse-toggle-btn"
+          aria-label={isCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}
+        >
+          {isCollapsed ? <ChevronRight size={18} /> : <ChevronLeft size={18} />}
+        </button>
+      </div>
 
-        {/* Analytics Link */}
-        <Link to="/dashboard/analytics" className="nav-link">
-          <BarChart className="icon" />
-          {!isCollapsed && <span className="label">Analytics</span>}
-        </Link>
+      <nav className="sidebar-nav-list" aria-label="Operations Navigation">
+        <NavLink
+          to="/dashboard"
+          end
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <LayoutDashboard className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Overview</span>}
+        </NavLink>
 
-        {/* New Post Link */}
-        <Link to="/dashboard/new-post" className="nav-link">
-          <PlusSquare className="icon" />
-          {!isCollapsed && <span className="label">New Post</span>}
-        </Link>
+        <NavLink
+          to="/dashboard/live-orders"
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <ChefHat className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Live Kitchen Board</span>}
+        </NavLink>
 
-        {/* New Project Link */}
-        <Link to="/dashboard/new-project" className="nav-link">
-          <PlusSquare className="icon" />
-          {!isCollapsed && <span className="label">New Project</span>}
-        </Link>
+        <NavLink
+          to="/dashboard/menu"
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <UtensilsCrossed className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Menu & Dishes</span>}
+        </NavLink>
 
-        {/* Posts Link */}
-        <Link to="/dashboard/posts" className="nav-link">
-          <FileText className="icon" />
-          {!isCollapsed && <span className="label">View Posts</span>}
-        </Link>
-
-        {/* View Services */}
-        <Link to="/dashboard/services" className="nav-link">
-          <Briefcase className="icon" />
-          {!isCollapsed && <span className="label">Services Requests</span>}
-        </Link>
-
-        {/* Messages Link */}
-        <Link to="/dashboard/messages" className="nav-link">
-          <Users className="icon" />
-          {!isCollapsed && <span className="label">View Messages</span>}
-        </Link>
-
-        {/* Settings Link */}
-        <Link to="/dashboard/settings" className="nav-link">
-          <Settings className="icon" />
-          {!isCollapsed && <span className="label">Settings</span>}
-        </Link>
+        <NavLink
+          to="/my-orders"
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <ShoppingBag className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Order Receipts</span>}
+        </NavLink>
       </nav>
 
-      {/* Logout Button */}
-      <div className="logout-section">
-        <Link to="/logout" className="nav-link">
-          <LogOut className="icon" />
-          {!isCollapsed && <span className="label">Logout</span>}
+      <div className="sidebar-bottom-section">
+        <Link to="/" className="sidebar-nav-item switch-store-link">
+          <Store className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Customer Store</span>}
         </Link>
+
+        <button
+          type="button"
+          onClick={() => {
+            handleLogout();
+            navigate('/');
+          }}
+          className="sidebar-nav-item logout-btn"
+        >
+          <LogOut className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Log Out</span>}
+        </button>
       </div>
-    </div>
+    </aside>
   );
 };
 

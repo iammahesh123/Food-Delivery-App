@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Home Page Styles
+   Voucher Tickets, Section Layouts, Trust Pillars Banner
+   Full-Bleed Responsive Structure for Wide Screens
+   ========================================================================== */
+
+.home-page-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+/* Common Section Inner Container */
+.home-section {
+  width: 100%;
+  padding: 44px 0;
+}
+
+.home-section.bg-surface-alt {
+  background-color: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.home-section-inner {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ==========================================================================
+   Promotional Deals Rail & Voucher Tickets
+   ========================================================================== */
+.home-promo-strip-section {
+  padding: 24px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.promo-strip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.promo-strip-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ea580c;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  padding: 5px 14px;
+  border-radius: 9999px;
+}
+
+.promo-strip-sub {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.promo-vouchers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Sleek Coupon Ticket Design */
+.voucher-ticket-card {
+  display: flex;
+  background: #fff;
+  border: 1.5px dashed #fed7aa;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.voucher-ticket-card:hover {
+  transform: translateY(-3px);
+  border-color: #f97316;
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.15);
+}
+
+.voucher-ticket-card.copied {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.ticket-left {
+  flex: 1;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.ticket-discount {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ea580c;
+  letter-spacing: -0.01em;
+}
+
+.ticket-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-top: 2px;
+}
+
+.ticket-min {
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+/* Ticket Divider with Round Notches */
+.ticket-divider {
+  position: relative;
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ticket-notch {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid #fed7aa;
+  z-index: 2;
+}
+
+.voucher-ticket-card.copied .ticket-notch {
+  border-color: #10b981;
+}
+
+.notch-top {
+  top: -8px;
+}
+
+.notch-bottom {
+  bottom: -8px;
+}
+
+.ticket-dashed-line {
+  height: 100%;
+  width: 1px;
+  border-left: 2px dashed #fed7aa;
+}
+
+.voucher-ticket-card.copied .ticket-dashed-line {
+  border-left-color: #10b981;
+}
+
+.ticket-right {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffbf7;
+  min-width: 115px;
+  border-left: 1px solid #fed7aa;
+}
+
+.voucher-ticket-card.copied .ticket-right {
+  background: #f0fdf4;
+  border-left-color: #10b981;
+}
+
+.ticket-code-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #94a3b8;
+}
+
+.ticket-code {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: 0.5px;
+  margin: 4px 0 6px 0;
+}
+
+.ticket-copy-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ea580c;
+}
+
+.text-success {
+  color: #059669;
+}
+
+/* ==========================================================================
+   Trust Pillars Banner
+   ========================================================================== */
+.home-trust-banner-section {
+  padding: 48px 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+}
+
+.trust-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.trust-pillar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.trust-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.bg-orange-soft { background: rgba(249, 115, 22, 0.18); }
+.bg-green-soft { background: rgba(16, 185, 129, 0.18); }
+.bg-blue-soft { background: rgba(59, 130, 246, 0.18); }
+.bg-purple-soft { background: rgba(168, 85, 247, 0.18); }
+
+.text-orange { color: #fb923c; }
+.text-green { color: #34d399; }
+.text-blue { color: #60a5fa; }
+.text-purple { color: #c084fc; }
+
+.trust-pillar-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 6px;
+}
+
+.trust-pillar-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #94a3b8;
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .promo-vouchers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trust-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-section {
+    padding: 32px 0;
+  }
+
+  .home-section-inner {
+    padding: 0 16px;
+  }
+
+  .promo-vouchers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

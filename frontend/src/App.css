@@ -1,48 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
+/* Global App Styles */
 #root {
-  max-width: 95%;
-  margin: 0 auto;
-  padding: 1rem;
-  text-align: center;
-  box-sizing: border-box;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  height: clamp(4em, 10vw,6em);
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Dashboard App Wrapper: Reset max-width and top padding for merchant hub */
+.dashboard-app-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
 }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+/* Page Header Standard */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.page-header-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2vw;
-}
-
-.read-the-docs {
-  color: #888;
+.page-header-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-muted);
 }

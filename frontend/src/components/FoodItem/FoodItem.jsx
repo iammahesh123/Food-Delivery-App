@@ -1,40 +1,67 @@
-import React, { useContext } from 'react'
-import './FoodItem.css'
-import { assets } from '../../assets/assets'
-import { StoreContext } from '../../context/StoreContext'
+import React, { useContext } from 'react';
+import { StoreContext } from '../../context/StoreContext';
+import { Plus, Minus, Star, Sparkles } from 'lucide-react';
+import './FoodItem.css';
 
 const FoodItem = ({ id, name, price, description, image }) => {
+  const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+  const count = cartItems[id] || 0;
 
-    const {cartItems,addToCart,removeFromCart} = useContext(StoreContext);
+  return (
+    <div className="modern-food-card fade-in">
+      <div className="card-thumb-wrapper">
+        <img className="dish-cover-img" src={image} alt={name} loading="lazy" />
+        <span className="price-tag-floating">${price.toFixed(2)}</span>
+      </div>
 
-    return (
-        <div className='food-item'>
-            <div className="food-item-container">
-                <img className='food-item-image' src={image} alt="" />
-                {
-                    !cartItems[id] ? <img className='add' onClick={()=> addToCart(id)} src = {assets.add_icon_white} alt="" />
-                    : <div className="food-item-counter">
-                        <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
-                        <p>{cartItems[id]}</p>
-                        <img onClick={()=>addToCart(id)}  src={assets.add_icon_green } alt="" />
-                    </div>
-                }
-            </div>
-            <div className="food-item-info">
-                <div className="food-item-name-rating">
-                    <p>{name}</p>
-                    <img src={assets.rating_starts} alt="" />
-                </div>
-                <p className="food-item-description">
-                    {description}
-                </p>
-                <p className="food-item-price">
-                    ${price}
-                </p>
-            </div>
-
+      <div className="dish-card-body">
+        <div className="dish-title-row">
+          <h3 className="dish-heading">{name}</h3>
+          <div className="dish-rating-badge">
+            <Star size={12} fill="currentColor" /> 4.8
+          </div>
         </div>
-    )
-}
 
-export default FoodItem  
+        <p className="dish-snippet">{description}</p>
+
+        <div className="dish-card-footer">
+          <div className="dish-calories">Chef's Special</div>
+
+          {count === 0 ? (
+            <button
+              type="button"
+              className="quick-add-btn"
+              onClick={() => addToCart(id)}
+              aria-label={`Add ${name} to cart`}
+            >
+              <Plus size={16} />
+              <span>Add</span>
+            </button>
+          ) : (
+            <div className="dish-stepper-pill">
+              <button
+                type="button"
+                className="stepper-action-btn"
+                onClick={() => removeFromCart(id)}
+                aria-label={`Decrease ${name} quantity`}
+              >
+                <Minus size={14} />
+              </button>
+              <span className="stepper-val">{count}</span>
+              <button
+                type="button"
+                className="stepper-action-btn"
+                onClick={() => addToCart(id)}
+                aria-label={`Increase ${name} quantity`}
+              >
+                <Plus size={14} />
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default FoodItem;

@@ -1,0 +1,148 @@
+.menu-manager-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.manager-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.manager-title {
+  font-size: 1.625rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.manager-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.menu-dish-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  border: 1px solid var(--color-neutral-200);
+}
+
+.dish-name-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dish-title {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+}
+
+.dish-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  max-width: 320px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dish-price-val {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.table-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.row-action-btn {
+  background: transparent;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.row-action-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.row-action-btn.delete:hover {
+  color: #ef4444;
+  background-color: #fee2e2;
+  border-color: #fecaca;
+}
+
+/* Modal Form */
+.add-dish-modal {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  max-width: 500px;
+  width: 100%;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-neutral-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.modal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-top h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.add-dish-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.modal-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.category-select {
+  padding: 10px 14px;
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface);
+  font-size: 0.9375rem;
+}
+
+.modal-btn-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}

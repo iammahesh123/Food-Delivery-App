@@ -2,54 +2,52 @@ import React from 'react';
 import './Collection.css';
 import { assets, restraunts_list } from '../../assets/assets';
 import { Link } from 'react-router-dom';
+import { Compass, ArrowRight, MapPin } from 'lucide-react';
 
 const Collections = () => {
-  const scrollContainerRef = React.useRef();
-
-  const scrollLeft = () => {
-    scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-  };
-
-  const scrollRight = () => {
-    scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-  };
-
   return (
-    <>
-      {/* <div className='collections-banner-container'>
-        <img src={assets.christmas_img} alt="Collections Banner" className="collections-banner" />
-      </div> */}
-      <div className="collections">
-        <h1>Collections</h1>
-        <p>
-          Explore curated lists of top restaurants, cafes, pubs, and bars in Hyderabad, based on trends.
-        </p>
+    <div className="collections-section">
+      <div className="collections-header-row">
+        <div>
+          <div className="collections-eyebrow">
+            <Compass size={15} className="text-orange" />
+            <span>Curated City Guides</span>
+          </div>
+          <h2 className="collections-title">Trending Collections</h2>
+          <p className="collections-sub">
+            Explore handpicked spots for celebrations, romantic dining, and weekend nightlife.
+          </p>
+        </div>
+        <Link to="/collections" className="collections-view-all-btn">
+          <span>All Collections</span>
+          <ArrowRight size={16} />
+        </Link>
       </div>
-      <div className="collections-wrapper">
-        <button className="scroll-button left" onClick={scrollLeft}>
-          &#9664;
-        </button>
-        <div className="collections-container" ref={scrollContainerRef}>
-          {restraunts_list.map((restaurant) => (
-            <div className="collections-card" key={restaurant._id}>
-              <img src={restaurant.image} alt={`Image of ${restaurant.name}`} className="card-image" />
-              <div className="card-overlay">
-              <Link to={`/collections/${restaurant.name.toLowerCase().replace(/ /g, '-')}`}>
-                  <h3>{restaurant.name}</h3>
-                </Link>
-                <div className="rating-container">
-                  <img src={assets.rating_starts} alt="Rating Stars" className="rating-stars" />
-                </div>
-                <p>{restaurant.places}</p>
+
+      <div className="collections-grid">
+        {restraunts_list.map((item) => (
+          <Link
+            to={`/collections/${item.name.toLowerCase().replace(/ /g, '-')}`}
+            className="collections-card"
+            key={item._id}
+          >
+            <img src={item.image} alt={item.name} className="card-image" />
+            <div className="card-gradient-overlay" />
+            <div className="card-overlay-content">
+              <div className="card-place-pill">
+                <MapPin size={12} />
+                <span>{item.places}</span>
+              </div>
+              <h3 className="card-title">{item.name}</h3>
+              <div className="card-explore-row">
+                <span>Explore spots</span>
+                <ArrowRight size={14} />
               </div>
             </div>
-          ))}
-        </div>
-        <button className="scroll-button right" onClick={scrollRight}>
-          &#9654;
-        </button>
+          </Link>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 
