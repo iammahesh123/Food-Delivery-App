@@ -104,16 +104,16 @@
 }
 
 /* Main Heading */
-.hero-main-title {
+.hero-section .hero-main-title {
   font-size: clamp(34px, 4.2vw, 56px);
-  font-weight: 800;
+  font-weight: 850;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: #0f172a;
+  color: #0f172a !important;
   margin-bottom: 18px;
 }
 
-.hero-title-gradient {
+.hero-section .hero-title-gradient {
   background: linear-gradient(135deg, #e11d48 0%, #ea580c 50%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -121,9 +121,9 @@
 }
 
 /* Subtitle */
-.hero-subtitle {
+.hero-section .hero-subtitle {
   font-size: clamp(15px, 1.25vw, 18px);
-  color: #475569;
+  color: #475569 !important;
   line-height: 1.6;
   max-width: 580px;
   margin-bottom: 28px;
@@ -588,7 +588,7 @@
     padding: 24px 0;
   }
 
-  .hero-main-title {
+  .hero-section .hero-main-title {
     font-size: 28px;
   }
 

@@ -1,0 +1,339 @@
+/* Dining Pay Modal Styling */
+
+.dining-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.dining-modal-dialog {
+  background: #ffffff;
+  border-radius: var(--radius-2xl, 24px);
+  max-width: 520px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalScaleUp {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: #f1f5f9;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.close-modal-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.dining-pay-form {
+  padding: 2rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pay-modal-header {
+  text-align: center;
+}
+
+.pay-icon-wrap {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-xl, 16px);
+  background: #fff7ed;
+  color: #ff4c24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.75rem;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.modal-sub {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.perk-applied-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  border-radius: var(--radius-lg, 12px);
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+}
+
+.perk-sparkle {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+.modal-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.modal-input-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.currency-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  border-radius: var(--radius-xl, 14px);
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.currency-input-wrap:focus-within {
+  border-color: #ff4c24;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 76, 36, 0.15);
+}
+
+.currency-symbol {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-right: 0.35rem;
+}
+
+.bill-number-input {
+  width: 100%;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Tips Row */
+.tips-selector-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tip-btn {
+  flex: 1;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: var(--radius-lg, 10px);
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tip-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.tip-btn.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* Bill Breakdown Box */
+.bill-breakdown-box {
+  background: #f8fafc;
+  border-radius: var(--radius-xl, 14px);
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  color: #475569;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.breakdown-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.25rem 0;
+}
+
+.breakdown-row.total {
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.total-num {
+  font-size: 1.25rem;
+  color: #ff4c24;
+}
+
+/* Payment Pills */
+.payment-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.method-pill {
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: var(--radius-full, 9999px);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.method-pill:hover {
+  border-color: #cbd5e1;
+}
+
+.method-pill.active {
+  background: #fff7ed;
+  border-color: #ff4c24;
+  color: #ff4c24;
+}
+
+.pay-submit-btn {
+  width: 100%;
+}
+
+/* Payment Success Card */
+.payment-success-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.receipt-success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.15);
+}
+
+.receipt-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.receipt-sub {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.75rem;
+}
+
+.receipt-docket {
+  background: #f8fafc;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: var(--radius-xl, 16px);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.receipt-header span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.receipt-divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0.85rem 0;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: #475569;
+  margin-bottom: 0.4rem;
+}
+
+.receipt-row.final {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin-top: 0.4rem;
+}
+
+.receipt-footer {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.receipt-actions {
+  display: flex;
+  justify-content: center;
+}

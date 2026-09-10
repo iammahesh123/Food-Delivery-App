@@ -1,11 +1,13 @@
 import React, { useState, useContext } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
-import { Calendar, Clock, Users, CheckCircle2, UtensilsCrossed } from 'lucide-react';
+import { Calendar, Clock, Users, CheckCircle2, UtensilsCrossed, ArrowRight, Sparkles } from 'lucide-react';
 import Button from '../../components/ui/Button';
 import './BookTable.css';
 
 const BookTable = ({ restaurant }) => {
-  const { bookTable } = useContext(StoreContext);
+  const navigate = useNavigate();
+  const { bookDiningTable, userProfile } = useContext(StoreContext);
 
   const [selectedDate, setSelectedDate] = useState(
     new Date().toISOString().split('T')[0]
@@ -21,16 +23,19 @@ const BookTable = ({ restaurant }) => {
     dinner: ['6:00 PM', '6:30 PM', '7:00 PM', '7:30 PM', '8:00 PM', '8:30 PM', '9:00 PM'],
   };
 
-  const handleBooking = (e) => {
+  const handleBooking = async (e) => {
     e.preventDefault();
-    const reservation = bookTable({
-      restaurantId: restaurant?.id || '1',
+    const reservation = await bookDiningTable({
+      restaurantId: restaurant?.id || 'd1',
       restaurantName: restaurant?.name || 'Delicious Bites',
+      restaurantAddress: restaurant?.address || '123 Main Street, New York, NY',
       date: selectedDate,
       time: selectedTime,
-      mealType,
-      numberOfGuests,
+      mealType: mealType.toUpperCase(),
+      guestCount: numberOfGuests,
       specialRequests,
+      guestName: userProfile?.name || 'Valued Guest',
+      discountPercent: 20,
     });
     setBookingConfirmed(reservation);
   };
@@ -49,7 +54,7 @@ const BookTable = ({ restaurant }) => {
         <div className="reservation-details-docket">
           <div className="docket-row">
             <span className="docket-label">Booking Reference</span>
-            <span className="docket-val">{bookingConfirmed.id}</span>
+            <span className="docket-val">{bookingConfirmed.bookingReference || bookingConfirmed.id}</span>
           </div>
           <div className="docket-row">
             <span className="docket-label">Date & Time</span>
@@ -57,7 +62,7 @@ const BookTable = ({ restaurant }) => {
           </div>
           <div className="docket-row">
             <span className="docket-label">Party Size</span>
-            <span className="docket-val">{bookingConfirmed.numberOfGuests} Guests ({bookingConfirmed.mealType})</span>
+            <span className="docket-val">{bookingConfirmed.guestCount || bookingConfirmed.numberOfGuests} Guests ({bookingConfirmed.mealType})</span>
           </div>
           {bookingConfirmed.specialRequests && (
             <div className="docket-row">
@@ -68,6 +73,9 @@ const BookTable = ({ restaurant }) => {
         </div>
 
         <div className="confirmed-actions">
+          <Button variant="primary" onClick={() => navigate('/my-dining')}>
+            View My Dining Passes
+          </Button>
           <Button variant="secondary" onClick={() => setBookingConfirmed(null)}>
             Book Another Table
           </Button>

@@ -10,6 +10,8 @@ import {
   ChevronLeft,
   ChevronRight,
   ShieldCheck,
+  CalendarCheck,
+  Ticket,
 } from 'lucide-react';
 import { StoreContext } from '../../../context/StoreContext';
 import './Sidebar.css';
@@ -61,6 +63,22 @@ const Sidebar = ({ isCollapsed, onToggleCollapse }) => {
         >
           <UtensilsCrossed className="sidebar-icon" size={20} />
           {!isCollapsed && <span className="sidebar-label">Menu & Dishes</span>}
+        </NavLink>
+
+        <NavLink
+          to="/dashboard/dining"
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <CalendarCheck className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Table Reservations</span>}
+        </NavLink>
+
+        <NavLink
+          to="/dashboard/events"
+          className={({ isActive }) => `sidebar-nav-item ${isActive ? 'active' : ''}`}
+        >
+          <Ticket className="sidebar-icon" size={20} />
+          {!isCollapsed && <span className="sidebar-label">Events & Gate Passes</span>}
         </NavLink>
 
         <NavLink

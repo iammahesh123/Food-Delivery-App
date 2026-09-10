@@ -3,7 +3,7 @@ import './Navbar.css';
 import { assets } from '../../assets/assets';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
-import { ShoppingBag, Bell, User, LayoutDashboard, LogOut, Menu as MenuIcon, X } from 'lucide-react';
+import { ShoppingBag, Bell, User, LayoutDashboard, LogOut, Menu as MenuIcon, X, UtensilsCrossed, CalendarCheck, Ticket } from 'lucide-react';
 
 const Navbar = ({ setShowLogin }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,6 +34,18 @@ const Navbar = ({ setShowLogin }) => {
             className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
           >
             Menu
+          </NavLink>
+          <NavLink
+            to="/dining"
+            className={({ isActive }) => `nav-item dining-link ${isActive ? 'active' : ''}`}
+          >
+            Dining <span className="nav-hot-chip">Hot</span>
+          </NavLink>
+          <NavLink
+            to="/events"
+            className={({ isActive }) => `nav-item events-link ${isActive ? 'active' : ''}`}
+          >
+            Events <span className="nav-live-chip">Live</span>
           </NavLink>
           <NavLink
             to="/restaurants"
@@ -119,6 +131,14 @@ const Navbar = ({ setShowLogin }) => {
                   <ShoppingBag size={16} />
                   <span>My Orders</span>
                 </Link>
+                <Link to="/my-dining" className="dropdown-item">
+                  <CalendarCheck size={16} />
+                  <span>My Dining Passes</span>
+                </Link>
+                <Link to="/my-tickets" className="dropdown-item">
+                  <Ticket size={16} />
+                  <span>My Event Tickets</span>
+                </Link>
                 <Link to="/dashboard" className="dropdown-item">
                   <LayoutDashboard size={16} />
                   <span>Merchant Portal</span>
@@ -167,6 +187,20 @@ const Navbar = ({ setShowLogin }) => {
             Menu Catalog
           </NavLink>
           <NavLink
+            to="/dining"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Dining Out & Table Booking ✨
+          </NavLink>
+          <NavLink
+            to="/events"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            Live Events & Concerts 🎟️
+          </NavLink>
+          <NavLink
             to="/restaurants"
             onClick={() => setMobileMenuOpen(false)}
             className="mobile-nav-item"
@@ -193,6 +227,20 @@ const Navbar = ({ setShowLogin }) => {
             className="mobile-nav-item"
           >
             My Orders
+          </NavLink>
+          <NavLink
+            to="/my-dining"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            My Dining Passes
+          </NavLink>
+          <NavLink
+            to="/my-tickets"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mobile-nav-item"
+          >
+            My Event Tickets
           </NavLink>
           <NavLink
             to="/dashboard"

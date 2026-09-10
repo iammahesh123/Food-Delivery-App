@@ -1,7 +1,7 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React, { useState, useContext, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { StoreContext } from '../../context/StoreContext';
-import { Search, ArrowRight, Sparkles, Clock, Star, Flame, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Search, ArrowRight, Star, Clock, Flame, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
 import heroFeastImg from '../../assets/hero_feast.jpg';
 import './Header.css';
 
@@ -47,7 +47,7 @@ const Header = ({ onSelectCategory }) => {
   };
 
   // Autocomplete matching dishes
-  const suggestions = query.trim()
+  const suggestions = query.trim() && food_list
     ? food_list
         .filter((f) => f.name.toLowerCase().includes(query.toLowerCase()) || f.category.toLowerCase().includes(query.toLowerCase()))
         .slice(0, 4)

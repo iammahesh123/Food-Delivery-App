@@ -19,6 +19,14 @@ import DashboardLayout from './components/AdminDashboard/DashboardLayout/Dashboa
 import Dashboard from './components/AdminDashboard/Dashboard';
 import LiveOrders from './components/AdminDashboard/LiveOrders/LiveOrders';
 import MenuManager from './components/AdminDashboard/MenuManager/MenuManager';
+import MerchantDiningManager from './components/AdminDashboard/DiningManager/MerchantDiningManager';
+import DiningHub from './pages/Dining/DiningHub';
+import DiningBookingPage from './pages/Dining/DiningBookingPage';
+import MyDiningBookings from './pages/Dining/MyDiningBookings';
+import LiveEventsHub from './pages/LiveEvents/LiveEventsHub';
+import EventBookingPage from './pages/LiveEvents/EventBookingPage';
+import MyEventTickets from './pages/LiveEvents/MyEventTickets';
+import MerchantEventsManager from './components/AdminDashboard/EventsManager/MerchantEventsManager';
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
@@ -40,6 +48,12 @@ const App = () => {
           {/* Customer Marketplace Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/explore-menu" element={<MenuPage />} />
+          <Route path="/dining" element={<DiningHub />} />
+          <Route path="/dining/book/:restaurantId" element={<DiningBookingPage />} />
+          <Route path="/my-dining" element={<MyDiningBookings />} />
+          <Route path="/events" element={<LiveEventsHub />} />
+          <Route path="/events/:eventId" element={<EventBookingPage />} />
+          <Route path="/my-tickets" element={<MyEventTickets />} />
           <Route path="/restaurants" element={<Restaurants />} />
           <Route path="/restaurant/:id" element={<RestaurantPage />} />
           <Route path="/cart" element={<Cart />} />
@@ -77,6 +91,26 @@ const App = () => {
               <PrivateRoute>
                 <DashboardLayout>
                   <MenuManager />
+                </DashboardLayout>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard/dining"
+            element={
+              <PrivateRoute>
+                <DashboardLayout>
+                  <MerchantDiningManager />
+                </DashboardLayout>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard/events"
+            element={
+              <PrivateRoute>
+                <DashboardLayout>
+                  <MerchantEventsManager />
                 </DashboardLayout>
               </PrivateRoute>
             }

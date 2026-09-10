@@ -26,7 +26,7 @@ const FeatureServices = () => {
       icon: UtensilsCrossed,
       badge: 'Instant Confirm',
       actionText: 'Browse Dining Venues',
-      route: '/restaurants',
+      route: '/dining',
     },
     {
       id: 'catering-events',

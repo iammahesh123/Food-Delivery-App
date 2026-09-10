@@ -1,0 +1,568 @@
+/* =========================================================
+   MERCHANT EVENTS & GATE MANAGER CSS
+   ========================================================= */
+
+.merchant-events-page {
+  padding: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.events-mgmt-header {
+  margin-bottom: 24px;
+}
+
+.mgmt-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+
+.mgmt-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* KPIs */
+.mgmt-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.kpi-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-purple {
+  background: rgba(139, 92, 246, 0.12);
+  color: #8b5cf6;
+}
+
+.icon-blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: #3b82f6;
+}
+
+.icon-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.icon-pink {
+  background: rgba(236, 72, 153, 0.12);
+  color: #ec4899;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.kpi-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 2px 0 0;
+}
+
+/* Gate Scanner Box */
+.gate-scanner-box {
+  background: linear-gradient(135deg, #1e1b4b, #311042);
+  border-radius: 20px;
+  padding: 24px 28px;
+  color: #ffffff;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 30px rgba(30, 27, 75, 0.2);
+}
+
+.scanner-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.scanner-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ec4899;
+}
+
+.scanner-header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.scanner-header p {
+  font-size: 0.86rem;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.scanner-form {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.scan-input-wrapper {
+  flex: 1;
+  min-width: 280px;
+  position: relative;
+}
+
+.scan-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.scan-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 14px 16px 14px 46px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.scan-input::placeholder {
+  color: #94a3b8;
+}
+
+.scan-input:focus {
+  border-color: #ec4899;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.scan-admit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ec4899;
+  color: #ffffff;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.scan-admit-btn:hover {
+  background: #db2777;
+  transform: translateY(-1px);
+}
+
+/* Roster Section */
+.events-roster-section {
+  margin-bottom: 36px;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.roster-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.roster-card-media {
+  position: relative;
+  height: 140px;
+}
+
+.roster-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.roster-cat-chip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ec4899;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.roster-card-body {
+  padding: 16px;
+}
+
+.roster-card-title {
+  font-size: 1.05rem;
+  font-weight: 750;
+  color: #0f172a;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.roster-meta-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.roster-meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roster-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 10px;
+}
+
+.starting-price {
+  font-weight: 800;
+  color: #ec4899;
+  font-size: 0.95rem;
+}
+
+.capacity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Attendees Table */
+.attendees-table-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.table-filter-bar {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.filter-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-title-group .section-heading {
+  margin: 0;
+}
+
+.roster-count {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+}
+
+.table-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-dropdown-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #64748b;
+}
+
+.event-filter-select {
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-filter-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 10px;
+  width: 240px;
+}
+
+.search-filter-input input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.88rem;
+  color: #0f172a;
+  width: 100%;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.roster-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.roster-table th {
+  background: #f8fafc;
+  padding: 14px 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+  letter-spacing: 0.04em;
+}
+
+.roster-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.code-badge {
+  font-family: monospace;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+
+.attendee-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.attendee-name {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.attendee-email {
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.event-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-name-text {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.event-date-text {
+  color: #64748b;
+  font-size: 0.78rem;
+}
+
+.tier-chip {
+  display: inline-block;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.tier-chip.vip {
+  background: rgba(245, 158, 11, 0.12);
+  color: #d97706;
+}
+
+.tier-chip.lounge,
+.tier-chip.front_row {
+  background: rgba(139, 92, 246, 0.12);
+  color: #7c3aed;
+}
+
+.tier-chip.general_access {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.voucher-yes {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.voucher-none {
+  color: #94a3b8;
+}
+
+.amount-text {
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.status-pill.confirmed {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.status-pill.checked-in {
+  background: rgba(59, 130, 246, 0.1);
+  color: #2563eb;
+}
+
+.status-pill.cancelled {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.btn-admit {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-admit:hover {
+  background: #059669;
+}
+
+.admitted-label {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.void-label {
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.table-empty {
+  padding: 48px 20px;
+  text-align: center;
+  color: #94a3b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}

@@ -1,0 +1,547 @@
+/* My Dining Bookings Page Styles */
+
+.my-dining-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  color: var(--text-primary, #1e293b);
+}
+
+.my-dining-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.dining-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: #fff7ed;
+  color: #ff4c24;
+  border: 1px solid #fed7aa;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.dining-page-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.35rem;
+}
+
+.dining-page-sub {
+  font-size: 1rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.browse-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.25rem;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  transition: all 0.2s ease;
+}
+
+.browse-more-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+}
+
+/* KPI Grid */
+.dining-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.kpi-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 1.35rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+}
+
+.kpi-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-xl, 14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-icon-wrap.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.kpi-icon-wrap.emerald {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.kpi-icon-wrap.orange {
+  background: #fff7ed;
+  color: #ff4c24;
+}
+
+.kpi-label {
+  display: block;
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.15rem;
+}
+
+.kpi-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Tabs Bar */
+.reservations-tabs-bar {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid #f1f5f9;
+  margin-bottom: 2rem;
+}
+
+.tab-item-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #64748b;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.tab-item-btn:hover {
+  color: #0f172a;
+}
+
+.tab-item-btn.active {
+  color: #ff4c24;
+}
+
+.tab-item-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: #ff4c24;
+  border-radius: var(--radius-full, 9999px);
+}
+
+/* Empty State */
+.empty-reservations-box {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--radius-2xl, 24px);
+  padding: 3.5rem 2rem;
+  text-align: center;
+  max-width: 580px;
+  margin: 3rem auto;
+}
+
+.empty-icon-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff7ed;
+  color: #ff4c24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+
+.empty-reservations-box h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.empty-reservations-box p {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/* Reservations List Grid */
+.reservations-list-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.reservation-card-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 20px);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  display: flex;
+  transition: all 0.25s ease;
+}
+
+.reservation-card-box:hover {
+  box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.res-cover-column {
+  width: 220px;
+  min-height: 180px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.res-cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.res-overlay-status {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.status-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full, 9999px);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.status-badge.confirmed {
+  background: #10b981;
+}
+
+.status-badge.seated {
+  background: #2563eb;
+}
+
+.status-badge.completed {
+  background: #8b5cf6;
+}
+
+.status-badge.cancelled {
+  background: #ef4444;
+}
+
+.res-info-column {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.res-header-line {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.res-ref-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ff4c24;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.res-venue-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.res-venue-address {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.qr-quick-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-xl, 14px);
+  padding: 0.6rem 0.85rem;
+  color: #0f172a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.qr-quick-btn span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.qr-quick-btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+/* Docket Chips */
+.res-docket-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+}
+
+.docket-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-lg, 10px);
+}
+
+.docket-chip.highlight {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.res-special-request {
+  background: #fafafa;
+  border-left: 3px solid #cbd5e1;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+  color: #475569;
+  border-radius: 0 var(--radius-md, 8px) var(--radius-md, 8px) 0;
+  margin-bottom: 0.85rem;
+}
+
+.res-bill-settled-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+  font-size: 0.85rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-lg, 10px);
+  margin-bottom: 0.85rem;
+}
+
+/* Card Actions */
+.res-actions-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.pay-bill-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.cancel-link-btn {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.45rem 0.75rem;
+  border-radius: var(--radius-md, 8px);
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.cancel-link-btn:hover {
+  background: #fef2f2;
+}
+
+.cancelled-note {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: #ef4444;
+  font-weight: 500;
+}
+
+/* QR Pass Modal */
+.qr-pass-modal-box {
+  background: #ffffff;
+  border-radius: var(--radius-2xl, 24px);
+  max-width: 440px;
+  width: 100%;
+  position: relative;
+  padding: 2.25rem;
+  text-align: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.qr-pass-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #ff4c24;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.qr-venue-name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.qr-venue-addr {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin: 0 0 1.5rem;
+}
+
+.qr-code-display-card {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.large-qr-code {
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.verification-code-badge {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-lg, 12px);
+  padding: 0.45rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.code-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 700;
+}
+
+.code-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 0.06em;
+}
+
+.scan-instruction {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.qr-pass-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  text-align: left;
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: var(--radius-lg, 12px);
+  margin-bottom: 1.5rem;
+}
+
+.pass-detail-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pass-detail-row span {
+  color: #64748b;
+}
+
+.pass-detail-row strong {
+  color: #0f172a;
+}
+
+.qr-modal-actions button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .reservation-card-box {
+    flex-direction: column;
+  }
+  .res-cover-column {
+    width: 100%;
+    height: 160px;
+  }
+}

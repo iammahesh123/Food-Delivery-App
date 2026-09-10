@@ -1,0 +1,711 @@
+/* Dining Booking Page Styling */
+
+.dining-booking-page {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  color: var(--text-primary, #1e293b);
+}
+
+.booking-page-header {
+  margin-bottom: 2rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #0f172a;
+}
+
+.venue-hero-snippet {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.snippet-img {
+  width: 110px;
+  height: 90px;
+  border-radius: var(--radius-xl, 14px);
+  object-fit: cover;
+}
+
+.snippet-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.snippet-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: #0f172a;
+  color: #facc15;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm, 6px);
+  font-size: 0.78rem;
+}
+
+.snippet-price {
+  font-weight: 600;
+  color: #475569;
+}
+
+.snippet-offer {
+  background: #ecfdf5;
+  color: #059669;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-full, 9999px);
+  font-size: 0.75rem;
+}
+
+.snippet-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.snippet-address {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Interactive Form Grid */
+.booking-interactive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+.booking-card-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ff4c24;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.2rem;
+}
+
+.step-desc {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.custom-date-input,
+.custom-text-input {
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-lg, 12px);
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.2s ease;
+  color: #0f172a;
+  background: #ffffff;
+}
+
+.custom-date-input:focus,
+.custom-text-input:focus {
+  border-color: #ff4c24;
+  box-shadow: 0 0 0 3px rgba(255, 76, 36, 0.15);
+}
+
+/* Meal Service Pill Group */
+.meal-pill-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.meal-pill-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-xl, 14px);
+  padding: 0.85rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.meal-pill-btn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.meal-pill-btn.active {
+  background: #fff7ed;
+  border-color: #ff4c24;
+  box-shadow: 0 4px 12px rgba(255, 76, 36, 0.12);
+}
+
+.meal-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.meal-hours {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+}
+
+/* Time Slots Chips Grid */
+.slots-chips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(105px, 1fr));
+  gap: 0.65rem;
+}
+
+.slot-pill {
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: var(--radius-lg, 10px);
+  padding: 0.65rem 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.slot-pill:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.slot-pill.active {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  border-color: #ea580c;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+}
+
+/* Guests Counter Bar */
+.guests-counter-bar {
+  display: inline-flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-xl, 16px);
+  padding: 0.4rem;
+  gap: 1.25rem;
+  width: fit-content;
+}
+
+.counter-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-lg, 12px);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.counter-btn:hover {
+  background: #ff4c24;
+  color: #ffffff;
+  border-color: #ff4c24;
+}
+
+.guests-value-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.count-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.count-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+/* Seating Zones Selector */
+.zones-selector-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.zone-option-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-xl, 14px);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.zone-option-row:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.zone-option-row.selected {
+  background: #fff7ed;
+  border-color: #ff4c24;
+  box-shadow: 0 4px 12px rgba(255, 76, 36, 0.1);
+}
+
+.zone-icon {
+  font-size: 1.75rem;
+}
+
+.zone-text {
+  flex: 1;
+}
+
+.zone-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.15rem;
+}
+
+.zone-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.radio-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.zone-option-row.selected .radio-circle {
+  border-color: #ff4c24;
+}
+
+.radio-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff4c24;
+}
+
+/* Occasion Chips */
+.occasions-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.occasion-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  border-radius: var(--radius-full, 9999px);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.occasion-pill:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.occasion-pill.active {
+  background: #ff4c24;
+  color: #ffffff;
+  border-color: #ff4c24;
+  box-shadow: 0 4px 10px rgba(255, 76, 36, 0.25);
+}
+
+/* Contact Fields Grid */
+.contact-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-fields-grid .full-span {
+  grid-column: 1 / -1;
+}
+
+/* Booking Summary Card */
+.booking-summary-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.summary-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.summary-rows-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.summary-row .label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.summary-row .val {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.summary-row.highlight {
+  background: #ecfdf5;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-lg, 10px);
+  border: 1px solid #a7f3d0;
+}
+
+.text-emerald {
+  color: #059669 !important;
+}
+
+.trust-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #059669;
+}
+
+.confirm-button {
+  width: 100%;
+}
+
+.terms-note {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-top: 0.85rem;
+}
+
+/* =========================================
+   CONFIRMED: Digital Dining Pass Card
+   ========================================= */
+.digital-pass-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-2xl, 24px);
+  padding: 2.5rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pass-top-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.success-badge-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 0 0 8px rgba(16, 185, 129, 0.15);
+}
+
+.pass-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.pass-subtitle {
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.pass-ticket-docket {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: #ffffff;
+  border-radius: var(--radius-2xl, 20px);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+}
+
+.docket-top-strip {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.docket-eyebrow {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  margin-bottom: 0.35rem;
+}
+
+.docket-venue-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+  color: #ffffff;
+}
+
+.docket-address {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  padding: 0.65rem;
+  border-radius: var(--radius-lg, 12px);
+  color: #0f172a;
+}
+
+.qr-icon {
+  margin-bottom: 0.25rem;
+}
+
+.qr-ref-code {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.docket-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.docket-grid-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.item-label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+}
+
+.item-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.docket-notes {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg, 10px);
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.docket-notes p {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  font-style: italic;
+  margin: 0.3rem 0 0;
+}
+
+.docket-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.guest-info {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+}
+
+.status-pill.confirmed {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full, 9999px);
+  letter-spacing: 0.04em;
+}
+
+.pass-actions-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .contact-fields-grid {
+    grid-template-columns: 1fr;
+  }
+  .docket-top-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .docket-grid {
+    grid-template-columns: 1fr;
+  }
+}
