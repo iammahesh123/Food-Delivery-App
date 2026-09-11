@@ -28,22 +28,35 @@ import EventBookingPage from './pages/LiveEvents/EventBookingPage';
 import MyEventTickets from './pages/LiveEvents/MyEventTickets';
 import MerchantEventsManager from './components/AdminDashboard/EventsManager/MerchantEventsManager';
 
+// Platform Super Admin Console
+import AdminLayout from './components/PlatformAdmin/AdminLayout/AdminLayout';
+import AdminOverview from './components/PlatformAdmin/Screens/AdminOverview';
+import AdminRestaurants from './components/PlatformAdmin/Screens/AdminRestaurants';
+import AdminUsers from './components/PlatformAdmin/Screens/AdminUsers';
+import AdminOrders from './components/PlatformAdmin/Screens/AdminOrders';
+import AdminDining from './components/PlatformAdmin/Screens/AdminDining';
+import AdminEvents from './components/PlatformAdmin/Screens/AdminEvents';
+import AdminPromos from './components/PlatformAdmin/Screens/AdminPromos';
+import AdminSettings from './components/PlatformAdmin/Screens/AdminSettings';
+
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
   const location = useLocation();
 
-  // Check if current route is a dashboard route
+  // Check if current route is a backoffice route (Merchant or Platform Admin)
   const isDashboardRoute = location.pathname.startsWith('/dashboard');
+  const isAdminRoute = location.pathname.startsWith('/admin');
+  const isBackofficeRoute = isDashboardRoute || isAdminRoute;
 
   return (
     <>
       {/* Login / Registration Modal */}
       {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
 
-      {/* Customer Header - hidden on dashboard routes */}
-      {!isDashboardRoute && <Navbar setShowLogin={setShowLogin} />}
+      {/* Customer Header - hidden on backoffice / admin routes */}
+      {!isBackofficeRoute && <Navbar setShowLogin={setShowLogin} />}
 
-      <div className={isDashboardRoute ? 'dashboard-app-wrapper' : location.pathname === '/' ? 'app-fullwidth' : 'app'}>
+      <div className={isBackofficeRoute ? 'dashboard-app-wrapper' : location.pathname === '/' ? 'app-fullwidth' : 'app'}>
         <Routes>
           {/* Customer Marketplace Routes */}
           <Route path="/" element={<Home />} />
@@ -63,6 +76,72 @@ const App = () => {
           <Route path="/collections" element={<CollectionsPage />} />
           <Route path="/featureservices" element={<FeatureServices />} />
           <Route path="/contact-us" element={<ContactUs />} />
+
+          {/* Platform Super Admin Console Routes */}
+          <Route
+            path="/admin"
+            element={
+              <AdminLayout>
+                <AdminOverview />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/restaurants"
+            element={
+              <AdminLayout>
+                <AdminRestaurants />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/users"
+            element={
+              <AdminLayout>
+                <AdminUsers />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/orders"
+            element={
+              <AdminLayout>
+                <AdminOrders />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/dining"
+            element={
+              <AdminLayout>
+                <AdminDining />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/events"
+            element={
+              <AdminLayout>
+                <AdminEvents />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/promos"
+            element={
+              <AdminLayout>
+                <AdminPromos />
+              </AdminLayout>
+            }
+          />
+          <Route
+            path="/admin/settings"
+            element={
+              <AdminLayout>
+                <AdminSettings />
+              </AdminLayout>
+            }
+          />
 
           {/* Merchant & Operations Console Routes */}
           <Route
@@ -118,8 +197,8 @@ const App = () => {
         </Routes>
       </div>
 
-      {/* Customer Footer - hidden on dashboard routes */}
-      {!isDashboardRoute && <Footer />}
+      {/* Customer Footer - hidden on backoffice / admin routes */}
+      {!isBackofficeRoute && <Footer />}
     </>
   );
 };

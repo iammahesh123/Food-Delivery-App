@@ -1,79 +1,840 @@
-.collections-banner-container {
+/* ==========================================================================
+   Collections Page Styles
+   Curated Thematic Dining Guides, Rich Photography & Venue Showcase
+   ========================================================================== */
+
+.collections-page-wrapper {
   width: 100%;
-  max-height: 400px;
-  margin-top: 100px;
+  min-height: 100vh;
+  margin-top: 72px; /* Clearance for fixed navbar */
+  background-color: #fcfcfc;
+  overflow-x: hidden;
+}
+
+.collections-container {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   1. Curated Hero Header Banner
+   ========================================================================== */
+.collections-hero-banner {
+  position: relative;
+  width: 100%;
+  padding: 64px 20px 48px;
+  background: linear-gradient(180deg, #fffbf7 0%, #fff7ed 50%, #fafafa 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* Ensure relative positioning for absolute child */
+  text-align: center;
 }
 
-.collections-banner {
+/* Ambient Glows */
+.collections-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.collections-hero-glow.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(254, 215, 170, 0.7) 0%, rgba(255, 255, 255, 0) 70%);
+  top: -150px;
+  left: 10%;
+}
+
+.collections-hero-glow.glow-2 {
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(254, 205, 211, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+  bottom: -100px;
+  right: 10%;
+}
+
+.collections-hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.collections-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collections-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: #ffffff;
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.08);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #c2410c;
+  margin-bottom: 18px;
+}
+
+.sparkle-icon {
+  color: #ea580c;
+}
+
+.collections-main-title {
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 850;
+  color: #0f172a;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.collections-gradient-text {
+  background: linear-gradient(135deg, #e11d48 0%, #ea580c 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.collections-main-subtitle {
+  font-size: clamp(15px, 1.25vw, 18px);
+  color: #475569;
+  line-height: 1.6;
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+/* Search Box */
+.collections-search-box {
+  display: flex;
+  align-items: center;
   width: 100%;
-  max-height: 400px;
-  object-fit: cover; /* Ensure proportional image cover */
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  max-width: 580px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px;
+  transition: all 0.2s ease;
 }
 
-.collection-contents {
-  position: absolute; /* Place content over the banner */
-  top: 70%;
-  left: 50%;
-  transform: translate(-100%, -50%);
-  max-width: 800px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.7); 
-  border-radius: 15px;
-  text-align: left;
-  color: white;
-  animation: fadeIn 2s ease-in-out;
-}
-.collection-contents h4 {
-  font-size: clamp(14px, 4vw, 24px);
-  font-weight: 500;
-  color: #ffd700; 
-}
-.collection-contents h2 {
-  font-weight: 600;
-  font-size: clamp(20px, 5vw, 34px);
-  margin-bottom: 3px;
+.collections-search-box:focus-within {
+  border-color: #f97316;
+  box-shadow: 0 12px 30px -5px rgba(249, 115, 22, 0.2), 0 0 0 3px rgba(249, 115, 22, 0.1);
+  transform: translateY(-1px);
 }
 
-.collection-contents p {
-  font-size: clamp(14px, 1.5vw, 18px);
-  line-height: 1.2;
-  margin-bottom: 10px;
-  color: rgb(151, 151, 151); 
+.search-box-icon {
+  color: #94a3b8;
+  margin-right: 12px;
+  flex-shrink: 0;
 }
 
-/* Search bar styling */
-.search-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.search-bar input {
-  padding: 10px;
-  width: 300px;
+.collections-search-input {
+  flex: 1;
   border: none;
-  border-radius: 5px;
+  background: transparent;
   outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #0f172a;
 }
 
-.search-bar button {
-  padding: 10px 15px;
+.collections-search-input::placeholder {
+  color: #94a3b8;
+}
+
+.clear-search-btn {
+  background: #f1f5f9;
   border: none;
-  background-color: #ff5733;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
+  border-radius: 9999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
   cursor: pointer;
+  transition: all 0.15s ease;
 }
 
-.search-bar button:hover {
-  background-color: #e04e2a;
+.clear-search-btn:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+/* Thematic Filter Scroll */
+.collections-filter-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.collection-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.collection-filter-chip:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.collection-filter-chip.active {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+/* ==========================================================================
+   2. Thematic Guides Gallery Section
+   ========================================================================== */
+.collections-gallery-section {
+  padding: 48px 0;
+}
+
+.gallery-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.gallery-section-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ea580c;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.gallery-section-title {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.gallery-count-badge {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 9999px;
+}
+
+/* Grid of Thematic Guides */
+.thematic-guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.thematic-guide-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.thematic-guide-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.12);
+  border-color: #fdba74;
+}
+
+.thematic-guide-card.selected-card {
+  border: 2px solid #ea580c;
+  box-shadow: 0 16px 32px -6px rgba(234, 88, 12, 0.2);
+}
+
+.thematic-img-frame {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.thematic-cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.thematic-guide-card:hover .thematic-cover-photo {
+  transform: scale(1.05);
+}
+
+.thematic-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(15, 23, 42, 0.6) 100%);
+}
+
+.thematic-card-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.thematic-top-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.thematic-places-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: 750;
+  color: #ea580c;
+  background: #fff7ed;
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.thematic-tag-pill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.thematic-card-title {
+  font-size: 1.1875rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.thematic-card-desc {
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.thematic-explore-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 750;
+  color: #ea580c;
+  transition: transform 0.2s ease;
+}
+
+.thematic-guide-card:hover .thematic-explore-action {
+  transform: translateX(4px);
+}
+
+.explore-arrow {
+  transition: transform 0.2s ease;
+}
+
+/* ==========================================================================
+   3. Venues in Selected Collection Section
+   ========================================================================== */
+.collections-venues-section {
+  padding: 48px 0 64px;
+  background: #ffffff;
+  border-top: 1px solid #f1f5f9;
+}
+
+.venues-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.venues-header-left {
+  max-width: 680px;
+}
+
+.venues-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ea580c;
+  margin-bottom: 6px;
+}
+
+.venues-title {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 850;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.highlight-text {
+  color: #ea580c;
+}
+
+.venues-subtitle {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.view-all-dining-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #334155;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.view-all-dining-btn:hover {
+  background: #fff7ed;
+  border-color: #fdba74;
+  color: #ea580c;
+  transform: translateY(-1px);
+}
+
+/* Venues Cards Grid */
+.venues-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 28px;
+}
+
+.curated-venue-card {
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.curated-venue-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -6px rgba(0, 0, 0, 0.1);
+  border-color: #fdba74;
+}
+
+.venue-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.venue-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.curated-venue-card:hover .venue-img {
+  transform: scale(1.05);
+}
+
+.venue-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 40%, rgba(15, 23, 42, 0.5) 100%);
+}
+
+.venue-top-badges {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.venue-discount-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
+}
+
+.venue-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #16a34a;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+}
+
+.venue-neighborhood-tag {
+  position: absolute;
+  bottom: 12px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  padding: 4px 10px;
+  border-radius: 9999px;
+}
+
+.venue-info-body {
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.venue-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.venue-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.venue-price-level {
+  font-size: 0.8125rem;
+  font-weight: 750;
+  color: #64748b;
+}
+
+.venue-cuisine-text {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #ea580c;
+  margin-bottom: 8px;
+}
+
+.venue-address-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
+.inline-pin {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.venue-vibes-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.venue-vibe-pill {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Bottom Actions Strip */
+.venue-actions-strip {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.venue-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.6875rem;
+  color: #94a3b8;
+  font-weight: 550;
+}
+
+.price-val {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.venue-btns-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.venue-reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: linear-gradient(135deg, #ff4c24 0%, #ea580c 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+  transition: all 0.2s ease;
+}
+
+.venue-reserve-btn:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.35);
+}
+
+.venue-delivery-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.venue-delivery-btn:hover {
+  background: #fff7ed;
+  border-color: #fdba74;
+  color: #ea580c;
+}
+
+/* ==========================================================================
+   4. Partners Directory Strip
+   ========================================================================== */
+.collections-partners-section {
+  padding: 40px 0 64px;
+  background: #fcfcfc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.partners-strip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.partners-strip-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.partners-see-all {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #ea580c;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.partners-see-all:hover {
+  text-decoration: underline;
+}
+
+.partners-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.partner-compact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.partner-compact-card:hover {
+  background: #fff7ed;
+  border-color: #fdba74;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+.partner-thumb {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.partner-compact-meta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.partner-name {
+  font-size: 0.92rem;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.partner-rating {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #16a34a;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin: 2px 0;
+}
+
+.partner-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1080px) {
+  .thematic-guides-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .venues-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .collections-hero-banner {
+    padding: 40px 16px 32px;
+  }
+
+  .thematic-guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .venues-section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .collections-container {
+    padding: 0 16px;
+  }
+
+  .collections-main-title {
+    font-size: 28px;
+  }
+
+  .collections-search-box {
+    padding: 6px 14px;
+  }
 }

@@ -664,3 +664,34 @@
     border-top: 2px dashed #e2e8f0;
   }
 }
+
+@media (max-width: 640px) {
+  .my-tickets-page {
+    padding: 24px 12px 60px;
+  }
+
+  .tickets-title {
+    font-size: 1.75rem;
+  }
+
+  .browse-events-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .tickets-tab-bar {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tickets-tab-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ticket-meta-grid {
+    grid-template-columns: 1fr;
+  }
+}

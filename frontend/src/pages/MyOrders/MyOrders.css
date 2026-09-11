@@ -151,3 +151,51 @@
   display: flex;
   gap: var(--space-2);
 }
+
+@media (max-width: 640px) {
+  .my-orders-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-tabs-control {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .order-tabs-control .tab-btn {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .card-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .card-items-preview {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .items-names {
+    max-width: 100%;
+  }
+
+  .card-bottom-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .order-actions {
+    width: 100%;
+  }
+
+  .order-actions button {
+    flex: 1;
+  }
+}

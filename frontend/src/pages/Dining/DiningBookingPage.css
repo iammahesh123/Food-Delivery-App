@@ -698,14 +698,34 @@
 }
 
 @media (max-width: 768px) {
+  .dining-booking-page {
+    padding: 1rem 0.75rem 3rem;
+  }
+  .booking-flow-docket {
+    padding: 1.25rem 1rem;
+    border-radius: 18px;
+  }
   .contact-fields-grid {
     grid-template-columns: 1fr;
   }
   .docket-top-strip {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
   }
   .docket-grid {
     grid-template-columns: 1fr;
+  }
+  .time-slots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+    gap: 8px;
+  }
+  .guest-stepper-capsule {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .dates-scroll-row {
+    gap: 8px;
+    padding-bottom: 6px;
   }
 }

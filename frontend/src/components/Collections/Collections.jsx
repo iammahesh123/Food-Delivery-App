@@ -25,9 +25,9 @@ const Collections = () => {
       </div>
 
       <div className="collections-grid">
-        {restraunts_list.map((item) => (
+        {restraunts_list.slice(0, 4).map((item) => (
           <Link
-            to={`/collections/${item.name.toLowerCase().replace(/ /g, '-')}`}
+            to="/collections"
             className="collections-card"
             key={item._id}
           >
@@ -38,7 +38,7 @@ const Collections = () => {
                 <MapPin size={12} />
                 <span>{item.places}</span>
               </div>
-              <h3 className="card-title">{item.name}</h3>
+              <h3 className="collections-card-title">{item.name}</h3>
               <div className="card-explore-row">
                 <span>Explore spots</span>
                 <ArrowRight size={14} />

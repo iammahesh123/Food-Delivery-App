@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Admin Users Styles
+   ========================================================================== */
+
+.admin-users-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.user-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.user-avatar-circle.role-admin {
+  background: linear-gradient(135deg, #ff4c24 0%, #ea580c 100%);
+}
+
+.user-avatar-circle.role-restaurant_owner {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.user-avatar-circle.role-delivery_person {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+}
+
+.user-avatar-circle.role-customer {
+  background: linear-gradient(135deg, #64748b 0%, #334155 100%);
+}
+
+.user-full-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.user-join-date {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.user-email-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.user-username {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.user-email {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.role-select-pill {
+  appearance: none;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  outline: none;
+}
+
+.role-pill-admin {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: #fed7aa;
+}
+
+.role-pill-restaurant_owner {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.role-pill-delivery_person {
+  background: #ecfdf5;
+  color: #047857;
+  border-color: #a7f3d0;
+}
+
+.role-pill-customer {
+  background: #f8fafc;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.user-status-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-status-toggle-btn.active {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.user-status-toggle-btn.active:hover {
+  background: #d1fae5;
+}
+
+.user-status-toggle-btn.suspended {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.user-status-toggle-btn.suspended:hover {
+  background: #fee2e2;
+}
+
+.orders-count-badge {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.role-modal-select {
+  padding: 9px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 13px;
+  outline: none;
+  background: #ffffff;
+}

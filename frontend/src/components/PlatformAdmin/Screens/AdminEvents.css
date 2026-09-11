@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Admin Events Styles
+   ========================================================================== */
+
+.admin-events-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.event-cell-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.evt-thumb-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e2e8f0;
+}
+
+.evt-title-text {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.evt-id-text {
+  font-size: 11px;
+  color: #64748b;
+  font-family: monospace;
+}
+
+.evt-date-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.evt-cat-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #ea580c;
+  background: #fff7ed;
+  padding: 2px 6px;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+.evt-date-text {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.evt-venue-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #334155;
+}
+
+.evt-sales-stack {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.evt-price-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.evt-rev-text {
+  font-size: 11px;
+  color: #059669;
+  font-weight: 700;
+}
+
+.capacity-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.capacity-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.capacity-labels strong {
+  color: #0f172a;
+}
+
+.featured-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  padding: 5px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.featured-toggle-btn.featured {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #ea580c;
+}

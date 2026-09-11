@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Admin Promos Styles
+   ========================================================================== */
+
+.admin-promos-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.promos-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.promo-stat-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.promo-stat-box .stat-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.promo-stat-box .stat-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 6px 0 2px 0;
+}
+
+.promo-stat-box .stat-hint {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.promo-code-chip-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.promo-code-text {
+  font-family: monospace;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.copy-code-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.copy-code-btn:hover {
+  color: #ea580c;
+}
+
+.discount-rate-badge {
+  display: inline-block;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 9999px;
+}
+
+.min-order-text,
+.max-cap-text,
+.expiry-date-text {
+  font-size: 13px;
+  color: #334155;
+  font-weight: 600;
+}

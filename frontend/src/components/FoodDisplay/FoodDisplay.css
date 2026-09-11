@@ -223,3 +223,35 @@
     gap: 16px;
   }
 }
+
+@media (max-width: 480px) {
+  .dietary-pills-group {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dietary-pills-group::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dietary-pill {
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .food-sort-select {
+    width: 100%;
+  }
+
+  .sort-dropdown-wrap {
+    width: 100%;
+  }
+
+  .food-display-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+

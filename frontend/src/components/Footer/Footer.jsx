@@ -91,8 +91,8 @@ const Footer = () => {
         <div className="footer-main-grid">
           {/* Col 1: Brand & App Download */}
           <div className="footer-col brand-col">
-            <Link to="/" className="footer-brand-link" onClick={scrollToTop}>
-              <img src={assets.logo2} alt="Tomato Logo" className="footer-logo-img" />
+            <Link to="/" className="footer-brand-link" onClick={scrollToTop} aria-label="Tomato Homepage">
+              <img src={assets.logo} alt="Tomato" className="footer-logo-img" />
             </Link>
             <p className="brand-description">
               Tomato delivers the city's finest dining, artisanal kitchens, and sensational live entertainment straight to food lovers with uncompromised hospitality.

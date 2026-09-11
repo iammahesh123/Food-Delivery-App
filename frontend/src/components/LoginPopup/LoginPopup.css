@@ -191,3 +191,20 @@
   color: var(--text-muted);
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .login-popup-backdrop {
+    padding: 12px;
+  }
+
+  .login-popup-card {
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    max-height: 92vh;
+    gap: var(--space-3);
+  }
+
+  .login-title {
+    font-size: 1.2rem;
+  }
+}

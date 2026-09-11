@@ -574,17 +574,67 @@
 }
 
 @media (max-width: 860px) {
-  .hero-heading {
-    font-size: 2rem;
+  .live-events-hub {
+    padding: 1rem 0.75rem 4rem;
   }
+
+  .events-hero-showcase {
+    padding: 2.2rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
   .events-search-bar {
     flex-direction: column;
     align-items: stretch;
+    border-radius: 20px;
+    padding: 1rem;
+    gap: 0.85rem;
   }
+
+  .search-unit {
+    width: 100%;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .search-unit:last-of-type {
+    border-bottom: none;
+  }
+
   .search-bar-divider {
     display: none;
   }
+
+  .find-events-btn {
+    width: 100%;
+    justify-content: center;
+    border-radius: 12px;
+  }
+
+  .active-tickets-alert {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 1.1rem;
+  }
+
+  .view-tickets-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
   .events-cards-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .events-trust-strip {
+    grid-template-columns: 1fr;
+    padding: 1.2rem;
+    gap: 1rem;
   }
 }

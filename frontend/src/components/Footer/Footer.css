@@ -99,9 +99,15 @@
 }
 
 .footer-logo-img {
-  width: 155px;
+  width: 140px;
   height: auto;
   object-fit: contain;
+  filter: brightness(1.08);
+  transition: transform 0.2s ease;
+}
+
+.footer-logo-img:hover {
+  transform: scale(1.02);
 }
 
 .brand-description {
@@ -510,5 +516,29 @@
   }
   .back-to-top-btn {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-trust-strip {
+    padding: 1.5rem 1rem;
+  }
+
+  .trust-strip-container {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-body-wrapper {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  .newsletter-form-modern {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .newsletter-form-modern button {
+    width: 100%;
   }
 }

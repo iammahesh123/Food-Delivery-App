@@ -1580,16 +1580,17 @@
     font-size: 2.2rem;
   }
 
-  .event-hero-banner {
+  .event-hero-showcase {
     min-height: 400px;
   }
 
   .hero-content-wrapper {
-    padding: 24px 20px;
+    padding: 24px 16px;
   }
 
   .hero-stats-bar {
     grid-template-columns: 1fr 1fr;
+    padding: 16px;
   }
 
   .perks-checklist-grid {
@@ -1615,5 +1616,43 @@
     bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 640px) {
+  .event-main-layout {
+    padding: 0 12px;
+  }
+
+  .content-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .booking-sticky-card {
+    padding: 20px 16px;
+    border-radius: 18px;
+  }
+
+  .hero-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .hero-performer-row {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .content-nav-tabs {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content-nav-tabs::-webkit-scrollbar {
+    display: none;
   }
 }
