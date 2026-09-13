@@ -1,0 +1,124 @@
+.ai-hub-wrapper {
+  min-height: 90vh;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 78, 80, 0.08) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(108, 92, 231, 0.08) 0%, transparent 40%),
+              #0f111a;
+  padding: 32px 24px 60px 24px;
+  color: #ffffff;
+}
+
+.ai-hub-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 36px auto;
+}
+
+.ai-hub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  background: rgba(255, 78, 80, 0.12);
+  border: 1px solid rgba(255, 78, 80, 0.35);
+  color: #ff6b6b;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.ai-hub-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 30%, #f9d423 70%, #ff4e50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.ai-hub-subtitle {
+  font-size: 1.05rem;
+  color: #a0aec0;
+  line-height: 1.6;
+  margin: 0 0 18px 0;
+}
+
+.ai-hub-status-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(26, 29, 44, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+}
+
+.ai-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00b894;
+  box-shadow: 0 0 8px #00b894;
+}
+
+.ai-hub-nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  background: rgba(26, 29, 44, 0.6);
+  padding: 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ai-tab-btn {
+  background: transparent;
+  border: none;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.22s ease;
+}
+
+.ai-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.ai-tab-btn.active {
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: #1a1a1a;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(255, 78, 80, 0.4);
+}
+
+.ai-hub-content-stage {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ai-hub-title {
+    font-size: 1.8rem;
+  }
+  .ai-hub-wrapper {
+    padding: 20px 14px 40px 14px;
+  }
+  .ai-tab-btn {
+    padding: 8px 12px;
+    font-size: 0.82rem;
+  }
+}

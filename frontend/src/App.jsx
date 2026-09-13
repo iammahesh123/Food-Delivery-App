@@ -27,6 +27,8 @@ import LiveEventsHub from './pages/LiveEvents/LiveEventsHub';
 import EventBookingPage from './pages/LiveEvents/EventBookingPage';
 import MyEventTickets from './pages/LiveEvents/MyEventTickets';
 import MerchantEventsManager from './components/AdminDashboard/EventsManager/MerchantEventsManager';
+import AiHub from './pages/AiHub/AiHub';
+import FloatingAiAssistant from './components/FloatingAiAssistant/FloatingAiAssistant';
 
 // Platform Super Admin Console
 import AdminLayout from './components/PlatformAdmin/AdminLayout/AdminLayout';
@@ -56,6 +58,9 @@ const App = () => {
       {/* Customer Header - hidden on backoffice / admin routes */}
       {!isBackofficeRoute && <Navbar setShowLogin={setShowLogin} />}
 
+      {/* Pinned Corner Customer AI Assistant */}
+      {!isBackofficeRoute && <FloatingAiAssistant />}
+
       <div className={isBackofficeRoute ? 'dashboard-app-wrapper' : location.pathname === '/' ? 'app-fullwidth' : 'app'}>
         <Routes>
           {/* Customer Marketplace Routes */}
@@ -76,6 +81,8 @@ const App = () => {
           <Route path="/collections" element={<CollectionsPage />} />
           <Route path="/featureservices" element={<FeatureServices />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/ai-hub" element={<AiHub />} />
+          <Route path="/ai-studio" element={<AiHub />} />
 
           {/* Platform Super Admin Console Routes */}
           <Route

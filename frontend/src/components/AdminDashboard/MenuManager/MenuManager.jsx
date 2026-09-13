@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { StoreContext } from '../../../context/StoreContext';
-import { Plus, Edit2, Trash2, Check, X, Tag, DollarSign } from 'lucide-react';
+import { Plus, Edit2, Trash2, Check, X, Tag, DollarSign, Sparkles } from 'lucide-react';
+import { aiService } from '../../../apiService/aiService';
 import DataTable from '../../ui/DataTable';
 import Button from '../../ui/Button';
 import Badge from '../../ui/Badge';

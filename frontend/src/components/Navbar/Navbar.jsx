@@ -84,6 +84,25 @@ const Navbar = ({ setShowLogin }) => {
           </NavLink>
 
           <NavLink
+            to="/ai-hub"
+            className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
+            style={{
+              background: 'linear-gradient(135deg, rgba(255, 78, 80, 0.15), rgba(249, 212, 35, 0.15))',
+              border: '1px solid rgba(255, 78, 80, 0.35)',
+              borderRadius: '20px',
+              padding: '6px 14px',
+              color: '#ff4e50',
+              fontWeight: '700',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            <Sparkles size={14} color="#ff4e50" />
+            <span>AI Studio</span>
+          </NavLink>
+
+          <NavLink
             to="/contact-us"
             className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
           >
@@ -343,7 +362,15 @@ const Navbar = ({ setShowLogin }) => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mobile-nav-item"
               >
-                <span>Gourmet Collections</span>
+                <span>Curated Collections</span>
+              </NavLink>
+              <NavLink
+                to="/ai-hub"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mobile-nav-item"
+                style={{ color: '#ff4e50', fontWeight: '700' }}
+              >
+                <span>✨ AI Intelligence Studio</span>
               </NavLink>
               <NavLink
                 to="/featureservices"
